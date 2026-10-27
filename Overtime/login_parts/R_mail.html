@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recuperar senha</title>
+    <link rel="stylesheet" href="../assets/css/style2.css">
+</head>
+
+<body>
+<div class="circulo circulo-1"></div>
+<div class="circulo circulo-2"></div>
+
+    <div class="login-container">
+
+        <div class="login-card">
+
+            <div class="title">
+                <span class="login-icon">
+                    <img src="../assets/imagens/OVERTIMERRR.png" alt="">
+                </span>
+
+                <h1>Recuperar senha</h1>
+                <p>Vamos te ajudar a voltar para sua conta</p>
+            </div>
+
+            <p class="subtitle">
+                Digite o e-mail cadastrado e enviaremos um link para você criar uma nova senha.
+            </p>
+
+            <form id="recuperarForm">
+
+                <div class="input-grupo">
+                    <label for="email">E-mail</label>
+
+                    <div class="input-box">
+                        <span class="envelope">&#X1F582</span>
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            placeholder="Digite seu e-mail"
+                            required
+                        >
+                    </div>
+                </div>
+
+                <button type="submit" id="btn-recuperar" class="btn-login">
+                    Enviar link de recuperação
+                </button>
+
+                <div id="message"></div>
+            </form>
+
+            <div class="register">
+                <p>Lembrou a senha? <a href="../login.html" class="criarconta">Fazer login</a></p>
+            </div>
+
+        </div>
+
+    </div>
+
+<script>
+    document.getElementById("recuperarForm").addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        const email = document.getElementById("email").value;
+        const message = document.getElementById("message");
+
+        // Aqui entraria a chamada real para o backend enviar o e-mail de recuperação
+        message.style.color = "green";
+        message.textContent = "Se " + email + " estiver cadastrado, você receberá um link em instantes.";
+    });
+</script>
+
+</body>
+</html>

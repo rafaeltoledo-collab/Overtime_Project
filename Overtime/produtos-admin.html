@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Produtos | OVERTIME</title>
+
+    <link
+        rel="stylesheet"
+        href="assets/css/produtos-admin.css"
+    >
+
+</head>
+
+
+<body>
+
+
+    <!-- ==========================================
+         HEADER
+    =========================================== -->
+
+    <header class="admin-header">
+
+        <div class="header-left">
+
+            <a
+                href="dashboard.html"
+                class="btn-voltar"
+            >
+                ←
+            </a>
+
+
+            <img
+                src="assets/logo.png"
+                alt="OVERTIME"
+                class="logo"
+            >
+
+
+            <div>
+
+                <h1>
+                    Gerenciamento de Produtos
+                </h1>
+
+                <p>
+                    Central de Gerenciamento
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <button
+            id="btn-sair"
+            class="btn-sair"
+        >
+            🚪 Sair
+        </button>
+
+    </header>
+
+
+
+    <!-- ==========================================
+         CONTEÚDO
+    =========================================== -->
+
+    <main class="admin-container">
+
+
+        <!-- TÍTULO -->
+
+        <section class="page-title">
+
+            <div>
+
+                <span>
+                    PAINEL ADMINISTRATIVO
+                </span>
+
+                <h2>
+                    Produtos
+                </h2>
+
+                <p>
+                    Cadastre e gerencie os produtos da OVERTIME.
+                </p>
+
+            </div>
+
+
+            <button
+                id="btnNovoProduto"
+                class="btn-novo"
+            >
+                + Novo produto
+            </button>
+
+        </section>
+
+
+
+        <!-- ==========================================
+             RESUMO
+        =========================================== -->
+
+        <section class="stats">
+
+
+            <div class="stat-card">
+
+                <span>
+                    📦
+                </span>
+
+                <div>
+
+                    <strong id="totalProdutos">
+                        0
+                    </strong>
+
+                    <p>
+                        Produtos
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <span>
+                    ✅
+                </span>
+
+                <div>
+
+                    <strong id="produtosAtivos">
+                        0
+                    </strong>
+
+                    <p>
+                        Ativos
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <span>
+                    📉
+                </span>
+
+                <div>
+
+                    <strong id="estoqueTotal">
+                        0
+                    </strong>
+
+                    <p>
+                        Itens em estoque
+                    </p>
+
+                </div>
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- ==========================================
+             BUSCA
+        =========================================== -->
+
+        <section class="toolbar">
+
+            <div class="search-box">
+
+                🔎
+
+                <input
+                    type="text"
+                    id="pesquisaProduto"
+                    placeholder="Pesquisar produto..."
+                >
+
+            </div>
+
+
+            <select id="filtroLiga">
+
+                <option value="">
+                    Todas as ligas
+                </option>
+
+                <option value="NFL">
+                    NFL
+                </option>
+
+                <option value="NBA">
+                    NBA
+                </option>
+
+                <option value="MLB">
+                    MLB
+                </option>
+
+                <option value="NHL">
+                    NHL
+                </option>
+
+                <option value="OVERTIME">
+                    OVERTIME
+                </option>
+
+            </select>
+
+        </section>
+
+
+
+        <!-- ==========================================
+             TABELA
+        =========================================== -->
+
+        <section class="products-panel">
+
+            <div class="table-wrapper">
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+
+                            <th>
+                                Produto
+                            </th>
+
+                            <th>
+                                Liga
+                            </th>
+
+                            <th>
+                                Categoria
+                            </th>
+
+                            <th>
+                                Preço
+                            </th>
+
+                            <th>
+                                Estoque
+                            </th>
+
+                            <th>
+                                Status
+                            </th>
+
+                            <th>
+                                Ações
+                            </th>
+
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody id="listaProdutos">
+
+                        <!-- JavaScript -->
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+
+            <div
+                id="semProdutos"
+                class="sem-produtos"
+            >
+
+                <span>
+                    📦
+                </span>
+
+                <h3>
+                    Nenhum produto cadastrado
+                </h3>
+
+                <p>
+                    Clique em "Novo produto" para começar.
+                </p>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- ==========================================
+         MODAL
+    =========================================== -->
+
+    <div
+        class="modal-background"
+        id="modalProduto"
+    >
+
+        <div class="modal">
+
+
+            <div class="modal-header">
+
+                <div>
+
+                    <span>
+                        OVERTIME
+                    </span>
+
+                    <h2 id="tituloModal">
+                        Novo produto
+                    </h2>
+
+                </div>
+
+
+                <button
+                    type="button"
+                    id="fecharModal"
+                    class="btn-fechar"
+                >
+                    ×
+                </button>
+
+            </div>
+
+
+
+            <form id="produtoForm">
+
+
+                <input
+                    type="hidden"
+                    id="produtoId"
+                >
+
+
+
+                <div class="form-grid">
+
+
+                    <!-- NOME -->
+
+                    <div class="form-group form-full">
+
+                        <label for="nomeProduto">
+                            Nome do produto
+                        </label>
+
+                        <input
+                            type="text"
+                            id="nomeProduto"
+                            placeholder="Ex: Jersey Lakers Home"
+                            required
+                        >
+
+                    </div>
+
+
+
+                    <!-- LIGA -->
+
+                    <div class="form-group">
+
+                        <label for="ligaProduto">
+                            Liga
+                        </label>
+
+                        <select
+                            id="ligaProduto"
+                            required
+                        >
+
+                            <option value="">
+                                Selecione
+                            </option>
+
+                            <option value="NFL">
+                                NFL
+                            </option>
+
+                            <option value="NBA">
+                                NBA
+                            </option>
+
+                            <option value="MLB">
+                                MLB
+                            </option>
+
+                            <option value="NHL">
+                                NHL
+                            </option>
+
+                            <option value="OVERTIME">
+                                OVERTIME
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+
+                    <!-- CATEGORIA -->
+
+                    <div class="form-group">
+
+                        <label for="categoriaProduto">
+                            Categoria
+                        </label>
+
+                        <select
+                            id="categoriaProduto"
+                            required
+                        >
+
+                            <option value="">
+                                Selecione
+                            </option>
+
+                            <option value="Jersey">
+                                Jersey
+                            </option>
+
+                            <option value="Camiseta">
+                                Camiseta
+                            </option>
+
+                            <option value="Boné">
+                                Boné
+                            </option>
+
+                            <option value="Moletom">
+                                Moletom
+                            </option>
+
+                            <option value="Bola">
+                                Bola
+                            </option>
+
+                            <option value="Acessório">
+                                Acessório
+                            </option>
+
+                            <option value="Colecionável">
+                                Colecionável
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+
+                    <!-- PREÇO -->
+
+                    <div class="form-group">
+
+                        <label for="precoProduto">
+                            Preço
+                        </label>
+
+                        <input
+                            type="number"
+                            id="precoProduto"
+                            min="0"
+                            step="0.01"
+                            placeholder="299.90"
+                            required
+                        >
+
+                    </div>
+
+
+
+                    <!-- ESTOQUE -->
+
+                    <div class="form-group">
+
+                        <label for="estoqueProduto">
+                            Estoque
+                        </label>
+
+                        <input
+                            type="number"
+                            id="estoqueProduto"
+                            min="0"
+                            placeholder="10"
+                            required
+                        >
+
+                    </div>
+
+
+
+                    <!-- IMAGEM -->
+
+                    <div class="form-group form-full">
+
+                        <label for="imagemProduto">
+                            URL da imagem
+                        </label>
+
+                        <input
+                            type="text"
+                            id="imagemProduto"
+                            placeholder="https://..."
+                        >
+
+                    </div>
+
+
+
+                    <!-- DESCRIÇÃO -->
+
+                    <div class="form-group form-full">
+
+                        <label for="descricaoProduto">
+                            Descrição
+                        </label>
+
+                        <textarea
+                            id="descricaoProduto"
+                            rows="4"
+                            placeholder="Descrição do produto..."
+                        ></textarea>
+
+                    </div>
+
+
+
+                    <!-- STATUS -->
+
+                    <div class="form-group">
+
+                        <label for="statusProduto">
+                            Status
+                        </label>
+
+                        <select id="statusProduto">
+
+                            <option value="true">
+                                Ativo
+                            </option>
+
+                            <option value="false">
+                                Inativo
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                </div>
+
+                <!-- OPÇÕES DO PRODUTO -->
+
+<div class="form-group form-full">
+
+    <label>
+        Exibição do produto
+    </label>
+
+    <div class="produto-opcoes">
+
+        <label class="opcao-checkbox">
+
+            <input
+                type="checkbox"
+                id="produtoNovo"
+            >
+
+            <span>
+                Novo
+            </span>
+
+        </label>
+
+
+        <label class="opcao-checkbox">
+
+            <input
+                type="checkbox"
+                id="produtoDestaque"
+            >
+
+            <span>
+                Mostrar em destaque
+            </span>
+
+        </label>
+
+
+        <label class="opcao-checkbox">
+
+            <input
+                type="checkbox"
+                id="produtoExclusivo"
+            >
+
+            <span>
+                Exclusivo
+            </span>
+
+        </label>
+
+    </div>
+
+</div>
+
+
+
+                <div class="modal-actions">
+
+                    <button
+                        type="button"
+                        id="cancelarProduto"
+                        class="btn-cancelar"
+                    >
+                        Cancelar
+                    </button>
+
+
+                    <button
+                        type="submit"
+                        class="btn-salvar"
+                    >
+                        Salvar produto
+                    </button>
+
+                </div>
+
+
+            </form>
+
+
+        </div>
+
+    </div>
+
+
+
+    <script src="produtos-admin.js"></script>
+
+</body>
+
+</html>

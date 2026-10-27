@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Produto | OVERTIME</title>
+
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Oswald:wght@400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="assets/css/produto.css"
+    >
+
+</head>
+
+
+<body>
+
+
+    <header class="produto-header">
+
+        <div class="produto-header-container">
+
+            <a
+                href="index.html"
+                class="produto-logo"
+            >
+
+                <img
+                    src="assets/logo.png"
+                    alt="OVERTIME"
+                >
+
+            </a>
+
+
+            <nav>
+
+                <a href="index.html">
+                    Início
+                </a>
+
+                <a href="produtos.html">
+                    Produtos
+                </a>
+
+            </nav>
+
+
+            <a
+                href="carrinho.html"
+                class="produto-carrinho-topo"
+            >
+
+                <i class="bi bi-cart3"></i>
+
+                <span id="cartCount">
+                    0
+                </span>
+
+            </a>
+
+        </div>
+
+    </header>
+
+
+
+    <main>
+
+
+        <section class="produto-detalhe">
+
+            <div class="produto-detalhe-container">
+
+
+                <!-- IMAGEM -->
+
+                <div class="produto-detalhe-imagem">
+
+                    <img
+                        id="produtoImagem"
+                        src=""
+                        alt=""
+                    >
+
+                </div>
+
+
+
+                <!-- INFORMAÇÕES -->
+
+                <div class="produto-detalhe-info">
+
+
+                    <span
+                        id="produtoLiga"
+                        class="produto-detalhe-liga"
+                    >
+                    </span>
+
+
+                    <h1 id="produtoNome">
+                    </h1>
+
+
+                    <span
+                        id="produtoCategoria"
+                        class="produto-detalhe-categoria"
+                    >
+                    </span>
+
+
+                    <div class="produto-detalhe-preco">
+
+                        <strong id="produtoPreco">
+                        </strong>
+
+                        <span id="produtoParcelamento">
+                        </span>
+
+                    </div>
+
+
+
+                    <p
+                        id="produtoDescricao"
+                        class="produto-descricao"
+                    >
+                    </p>
+
+
+
+                    <div class="produto-estoque">
+
+                        <span>
+                            Estoque:
+                        </span>
+
+                        <strong id="produtoEstoque">
+                        </strong>
+
+                    </div>
+
+
+
+                    <div class="produto-quantidade">
+
+                        <label for="quantidade">
+                            Quantidade
+                        </label>
+
+                        <div class="quantidade-controle">
+
+                            <button
+                                type="button"
+                                id="diminuirQuantidade"
+                            >
+                                −
+                            </button>
+
+
+                            <input
+                                type="number"
+                                id="quantidade"
+                                value="1"
+                                min="1"
+                            >
+
+
+                            <button
+                                type="button"
+                                id="aumentarQuantidade"
+                            >
+                                +
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <button
+                        id="adicionarCarrinho"
+                        class="btn-adicionar-produto"
+                    >
+
+                        <i class="bi bi-cart-plus"></i>
+
+                        ADICIONAR AO CARRINHO
+
+                    </button>
+
+
+
+                    <button
+                        id="favoritarProduto"
+                        class="btn-favoritar-produto"
+                    >
+
+                        <i class="bi bi-heart"></i>
+
+                        FAVORITAR
+
+                    </button>
+
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+
+    <script src="produto.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Central de Gerenciamento</title>
+
+    <link rel="stylesheet" href="assets/css/dashboard.css">
+
+    <script defer src="dashboard.js"></script>
+</head>
+
+<body>
+
+    <header class="dashboard-header">
+
+        <div class="header-title">
+            <div class="logo"><img src="assets/logo.png" alt=""></div>
+            <div>
+                <h1>Sistema de Gestão</h1>
+                <p>Central de Gerenciamento</p>
+            </div>
+        </div>
+
+        <div class="header-actions">
+
+    <a href="index.html" class="btn-loja">
+        🏠 Voltar para a loja
+    </a>
+
+    <button id="btn-sair" class="btn-sair">
+        🚪 Sair
+    </button>
+
+</div>
+
+    </header>
+
+
+    <main class="dashboard">
+
+        <section class="welcome">
+
+            <div>
+                <p class="welcome-small">Bem-vindo!</p>
+
+                <h2 id="bem-vindo">
+                    Central de Gerenciamento
+                </h2>
+
+                <p>
+                    Selecione uma das opções abaixo para continuar.
+                </p>
+            </div>
+
+            <div class="welcome-icon">
+                🖥️
+            </div>
+
+        </section>
+
+
+        <section class="cards">
+
+            <!-- CLIENTES -->
+
+            <button class="card card-clientes" onclick="abrir_clientes()">
+
+                <div class="card-icon">
+                    👥
+                </div>
+
+                <div class="card-content">
+
+                    <h3>Clientes</h3>
+
+                    <p>
+                        Cadastro e gerenciamento de clientes.
+                    </p>
+
+                </div>
+
+                <span class="card-arrow">
+                    →
+                </span>
+
+            </button>
+
+
+            <!-- FUNCIONÁRIOS -->
+
+            <button class="card card-funcionarios" onclick="abrir_funcionarios()">
+
+                <div class="card-icon">
+                    👨‍💼
+                </div>
+
+                <div class="card-content">
+
+                    <h3>Funcionários</h3>
+
+                    <p>
+                        Cadastro e gerenciamento da equipe.
+                    </p>
+
+                </div>
+
+                <span class="card-arrow">
+                    →
+                </span>
+
+            </button>
+
+
+            <!-- PRODUTOS -->
+
+            <button class="card card-produtos" onclick="abrir_produtos()">
+
+                <div class="card-icon">
+                    📦
+                </div>
+
+                <div class="card-content">
+
+                    <h3>Produtos</h3>
+
+                    <p>
+                        Controle e gerenciamento de produtos.
+                    </p>
+
+                </div>
+
+                <span class="card-arrow">
+                    →
+                </span>
+
+            </button>
+
+
+            <!-- RELATÓRIOS -->
+
+            <button class="card card-relatorios" onclick="abrir_relatorios()">
+
+                <div class="card-icon">
+                    📊
+                </div>
+
+                <div class="card-content">
+
+                    <h3>Relatórios</h3>
+
+                    <p>
+                        Consulte informações e relatórios do sistema.
+                    </p>
+
+                </div>
+
+                <span class="card-arrow">
+                    →
+                </span>
+
+            </button>
+
+        </section>
+
+
+        <section class="system-info">
+
+            <div class="info-item">
+                <span>🔐</span>
+                <div>
+                    <strong>Sistema seguro</strong>
+                    <p>Acesso protegido</p>
+                </div>
+            </div>
+
+            <div class="info-item">
+                <span>⚙️</span>
+                <div>
+                    <strong>Gerenciamento</strong>
+                    <p>Controle centralizado</p>
+                </div>
+            </div>
+
+            <div class="info-item">
+                <span>📈</span>
+                <div>
+                    <strong>Dados</strong>
+                    <p>Informações organizadas</p>
+                </div>
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <footer class="dashboard-footer">
+
+        <p>
+            Sistema de Gestão © 2026
+        </p>
+
+        <p>
+            Desenvolvido para fins acadêmicos
+        </p>
+
+    </footer>
+
+</body>
+
+</html>

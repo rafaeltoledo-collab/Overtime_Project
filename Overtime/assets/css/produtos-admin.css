@@ -1,0 +1,739 @@
+/* ==========================================
+   OVERTIME - PRODUTOS ADMIN
+========================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+:root {
+    --red: #d90416;
+    --dark-red: #aa0010;
+
+    --black: #111111;
+
+    --white: #ffffff;
+
+    --gray: #f5f5f5;
+    --border: #e4e4e4;
+
+    --text-gray: #707070;
+}
+
+
+body {
+    min-height: 100vh;
+
+    font-family: Arial, sans-serif;
+
+    background-color: #f7f7f7;
+
+    color: var(--black);
+}
+
+
+
+/* ==========================================
+   HEADER
+========================================== */
+
+.admin-header {
+    min-height: 85px;
+
+    padding: 15px 6%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    background-color: white;
+
+    border-bottom: 1px solid var(--border);
+}
+
+
+.header-left {
+    display: flex;
+    align-items: center;
+
+    gap: 18px;
+}
+
+
+.logo {
+    width: 130px;
+}
+
+
+.header-left h1 {
+    font-size: 18px;
+}
+
+
+.header-left p {
+    margin-top: 3px;
+
+    color: var(--red);
+
+    font-size: 11px;
+    font-weight: bold;
+}
+
+
+.btn-voltar {
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid var(--border);
+
+    color: #111;
+
+    font-size: 22px;
+
+    text-decoration: none;
+
+    transition: 0.2s;
+}
+
+
+.btn-voltar:hover {
+    background-color: #111;
+    color: white;
+}
+
+
+.btn-sair {
+    padding: 11px 20px;
+
+    border: none;
+
+    background-color: var(--red);
+    color: white;
+
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+
+
+/* ==========================================
+   CONTAINER
+========================================== */
+
+.admin-container {
+    width: 88%;
+
+    max-width: 1400px;
+
+    margin: auto;
+
+    padding: 45px 0 70px;
+}
+
+
+
+/* ==========================================
+   TÍTULO
+========================================== */
+
+.page-title {
+    display: flex;
+
+    align-items: flex-end;
+    justify-content: space-between;
+
+    margin-bottom: 30px;
+}
+
+
+.page-title span {
+    color: var(--red);
+
+    font-size: 10px;
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+}
+
+
+.page-title h2 {
+    margin-top: 5px;
+
+    font-size: 32px;
+}
+
+
+.page-title p {
+    margin-top: 6px;
+
+    color: var(--text-gray);
+
+    font-size: 13px;
+}
+
+
+.btn-novo {
+    padding: 13px 20px;
+
+    border: none;
+
+    background-color: var(--red);
+    color: white;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+
+.btn-novo:hover {
+    background-color: var(--dark-red);
+
+    transform: translateY(-2px);
+}
+
+
+
+/* ==========================================
+   ESTATÍSTICAS
+========================================== */
+
+.stats {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 15px;
+
+    margin-bottom: 25px;
+}
+
+
+.stat-card {
+    padding: 20px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 15px;
+
+    background-color: white;
+
+    border: 1px solid var(--border);
+}
+
+
+.stat-card > span {
+    font-size: 30px;
+}
+
+
+.stat-card strong {
+    display: block;
+
+    font-size: 23px;
+}
+
+
+.stat-card p {
+    color: var(--text-gray);
+
+    font-size: 11px;
+}
+
+
+
+/* ==========================================
+   TOOLBAR
+========================================== */
+
+.toolbar {
+    margin-bottom: 18px;
+
+    display: flex;
+
+    gap: 12px;
+}
+
+
+.search-box {
+    flex: 1;
+
+    height: 45px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+
+    padding: 0 15px;
+
+    background-color: white;
+
+    border: 1px solid var(--border);
+}
+
+
+.search-box input {
+    width: 100%;
+
+    border: none;
+
+    outline: none;
+
+    font-size: 13px;
+}
+
+
+.toolbar select {
+    min-width: 180px;
+
+    padding: 0 14px;
+
+    border: 1px solid var(--border);
+
+    background-color: white;
+}
+
+
+
+/* ==========================================
+   TABELA
+========================================== */
+
+.products-panel {
+    background-color: white;
+
+    border: 1px solid var(--border);
+}
+
+
+.table-wrapper {
+    overflow-x: auto;
+}
+
+
+table {
+    width: 100%;
+
+    border-collapse: collapse;
+}
+
+
+th {
+    padding: 16px;
+
+    text-align: left;
+
+    background-color: #f3f3f3;
+
+    font-size: 11px;
+
+    letter-spacing: 0.5px;
+}
+
+
+td {
+    padding: 15px;
+
+    border-top: 1px solid #eeeeee;
+
+    font-size: 12px;
+}
+
+
+.produto-tabela {
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+}
+
+
+.produto-tabela img {
+    width: 55px;
+    height: 55px;
+
+    object-fit: cover;
+
+    background-color: #eee;
+}
+
+
+.produto-tabela strong {
+    display: block;
+
+    max-width: 220px;
+}
+
+
+.status {
+    display: inline-block;
+
+    padding: 6px 9px;
+
+    font-size: 9px;
+
+    font-weight: bold;
+}
+
+
+.status.ativo {
+    background-color: #e5f7e9;
+
+    color: #168332;
+}
+
+
+.status.inativo {
+    background-color: #f4e6e6;
+
+    color: #a52b2b;
+}
+
+
+.acoes {
+    display: flex;
+
+    gap: 5px;
+}
+
+
+.btn-acao {
+    width: 34px;
+    height: 34px;
+
+    border: 1px solid #dddddd;
+
+    background-color: white;
+
+    cursor: pointer;
+}
+
+
+.btn-acao:hover {
+    border-color: var(--red);
+
+    color: var(--red);
+}
+
+
+
+/* ==========================================
+   SEM PRODUTOS
+========================================== */
+
+.sem-produtos {
+    padding: 60px 20px;
+
+    text-align: center;
+
+    display: none;
+}
+
+
+.sem-produtos span {
+    font-size: 45px;
+}
+
+
+.sem-produtos h3 {
+    margin-top: 12px;
+}
+
+
+.sem-produtos p {
+    margin-top: 5px;
+
+    color: var(--text-gray);
+
+    font-size: 12px;
+}
+
+
+
+/* ==========================================
+   MODAL
+========================================== */
+
+.modal-background {
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 1000;
+
+    padding: 30px;
+
+    display: none;
+
+    align-items: center;
+    justify-content: center;
+
+    background-color: rgba(0, 0, 0, 0.65);
+}
+
+
+.modal-background.ativo {
+    display: flex;
+}
+
+
+.modal {
+    width: 100%;
+    max-width: 700px;
+
+    max-height: 90vh;
+
+    overflow-y: auto;
+
+    background-color: white;
+}
+
+
+.modal-header {
+    padding: 22px 25px;
+
+    display: flex;
+
+    align-items: flex-start;
+    justify-content: space-between;
+
+    border-bottom: 1px solid var(--border);
+}
+
+
+.modal-header span {
+    color: var(--red);
+
+    font-size: 9px;
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+}
+
+
+.modal-header h2 {
+    margin-top: 3px;
+}
+
+
+.btn-fechar {
+    font-size: 30px;
+
+    border: none;
+
+    background: transparent;
+
+    cursor: pointer;
+}
+
+
+form {
+    padding: 25px;
+}
+
+
+.form-grid {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 18px;
+}
+
+
+.form-full {
+    grid-column: 1 / -1;
+}
+
+
+.form-group {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 7px;
+}
+
+
+.form-group label {
+    font-size: 11px;
+
+    font-weight: bold;
+}
+
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+
+    padding: 12px;
+
+    border: 1px solid #dddddd;
+
+    outline: none;
+
+    font-family: inherit;
+}
+
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: var(--red);
+}
+
+
+
+/* ==========================================
+   BOTÕES DO MODAL
+========================================== */
+
+.modal-actions {
+    margin-top: 25px;
+
+    display: flex;
+
+    justify-content: flex-end;
+
+    gap: 10px;
+}
+
+
+.btn-cancelar,
+.btn-salvar {
+    padding: 12px 20px;
+
+    border: none;
+
+    cursor: pointer;
+
+    font-weight: bold;
+}
+
+
+.btn-cancelar {
+    background-color: #eeeeee;
+}
+
+
+.btn-salvar {
+    background-color: var(--red);
+
+    color: white;
+}
+
+/* ==========================================
+   OPÇÕES DO PRODUTO
+========================================== */
+
+.produto-opcoes {
+    display: flex;
+
+    align-items: center;
+
+    flex-wrap: wrap;
+
+    gap: 20px;
+
+    padding: 15px;
+
+    background-color: #f7f7f7;
+
+    border: 1px solid #e5e5e5;
+}
+
+
+.opcao-checkbox {
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    cursor: pointer;
+
+    font-size: 12px;
+}
+
+
+.opcao-checkbox input {
+    width: 17px;
+    height: 17px;
+
+    accent-color: var(--red);
+
+    cursor: pointer;
+}
+
+/* ==========================================
+   RESPONSIVO
+========================================== */
+
+@media (max-width: 750px) {
+
+    .header-left h1,
+    .header-left p {
+        display: none;
+    }
+
+
+    .logo {
+        width: 100px;
+    }
+
+
+    .admin-container {
+        width: 92%;
+    }
+
+
+    .page-title {
+        align-items: flex-start;
+
+        flex-direction: column;
+
+        gap: 20px;
+    }
+
+
+    .stats {
+        grid-template-columns: 1fr;
+    }
+
+
+    .toolbar {
+        flex-direction: column;
+    }
+
+
+    .toolbar select {
+        height: 45px;
+    }
+
+
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .form-full {
+        grid-column: auto;
+    }
+
+}

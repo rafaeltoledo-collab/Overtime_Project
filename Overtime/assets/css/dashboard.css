@@ -1,0 +1,510 @@
+/* =========================
+   CONFIGURAÇÕES
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --vermelho: #d90416;
+    --vermelho-escuro: #aa0010;
+    --preto: #111111;
+    --branco: #ffffff;
+    --cinza: #f3f3f3;
+    --cinza-borda: #e5e5e5;
+    --cinza-texto: #727272;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+
+    font-family: "Inter", "Space Grotesk", sans-serif;
+
+    background-color: var(--branco);
+    color: var(--preto);
+
+    animation: cardApear 0.6s ease;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+.dashboard-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 18px 7%;
+
+    background-color: white;
+
+    border-bottom: 1px solid #e8e8e8;
+
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+}
+
+.header-title {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.header-title .logo {
+    width: auto;
+}
+
+.header-title .logo img {
+    width: 120px;
+}
+
+.header-title h1 {
+    margin: 0;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.header-title p {
+    margin: 3px 0 0;
+
+    color: var(--vermelho);
+
+    font-size: 12px;
+    font-weight: 600;
+}
+
+
+/* =========================
+   BOTÃO SAIR
+========================= */
+
+.btn-sair {
+    padding: 11px 22px;
+
+    border: 2px solid var(--vermelho);
+
+    background-color: var(--vermelho);
+    color: white;
+
+    font-family: inherit;
+    font-size: 12px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: 0.25s;
+}
+
+.btn-sair:hover {
+    background-color: var(--vermelho-escuro);
+    border-color: var(--vermelho-escuro);
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================
+   DASHBOARD
+========================= */
+
+.dashboard {
+    width: 86%;
+    max-width: 1150px;
+
+    margin: 0 auto;
+
+    padding: 50px 0;
+
+    flex: 1;
+}
+
+
+/* =========================
+   BOAS-VINDAS
+========================= */
+
+.welcome {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-bottom: 35px;
+}
+
+.welcome-small {
+    margin-bottom: 6px;
+
+    color: var(--vermelho);
+
+    font-size: 11px;
+    font-weight: 800;
+
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.welcome h2 {
+    margin-bottom: 8px;
+
+    font-size: 31px;
+    font-weight: 700;
+}
+
+.welcome p {
+    color: var(--cinza-texto);
+    font-size: 14px;
+}
+
+.welcome-icon {
+    width: 75px;
+    height: 75px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: var(--cinza);
+
+    border: 1px solid var(--cinza-borda);
+    border-radius: 50%;
+
+    font-size: 32px;
+}
+
+
+/* =========================
+   CARDS
+========================= */
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.card {
+    position: relative;
+
+    min-height: 175px;
+
+    padding: 25px;
+
+    display: flex;
+    align-items: flex-start;
+
+    background-color: var(--branco);
+    color: var(--preto);
+
+    border: 1px solid var(--cinza-borda);
+    border-radius: 4px;
+
+    cursor: pointer;
+
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
+
+    transition: 0.3s;
+
+    overflow: hidden;
+}
+
+.card::before {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    top: 0;
+
+    width: 4px;
+    height: 100%;
+
+    background-color: var(--vermelho);
+
+    transform: scaleY(0);
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-6px);
+
+    border-color: #cccccc;
+
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.10);
+}
+
+.card:hover::before {
+    transform: scaleY(1);
+}
+
+.card-icon {
+    width: 58px;
+    height: 58px;
+    min-width: 58px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-right: 18px;
+
+    background-color: var(--cinza);
+
+    border-radius: 50%;
+
+    font-size: 27px;
+
+    transition: 0.3s;
+}
+
+.card:hover .card-icon {
+    background-color: var(--preto);
+    color: white;
+}
+
+.card-content h3 {
+    margin: 4px 0 8px;
+
+    font-size: 19px;
+    font-weight: 700;
+}
+
+.card-content p {
+    max-width: 270px;
+
+    color: var(--cinza-texto);
+
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+.card-arrow {
+    position: absolute;
+
+    right: 22px;
+    bottom: 20px;
+
+    color: var(--vermelho);
+
+    font-size: 20px;
+
+    transition: 0.3s;
+}
+
+.card:hover .card-arrow {
+    transform: translateX(5px);
+}
+
+
+/* =========================
+   INFORMAÇÕES
+========================= */
+
+.system-info {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 15px;
+
+    margin-top: 30px;
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 17px;
+
+    background-color: var(--cinza);
+
+    border: 1px solid var(--cinza-borda);
+    border-radius: 4px;
+}
+
+.info-item > span {
+    font-size: 22px;
+}
+
+.info-item strong {
+    display: block;
+
+    font-size: 12px;
+}
+
+.info-item p {
+    margin-top: 3px;
+
+    color: var(--cinza-texto);
+
+    font-size: 11px;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+.dashboard-footer {
+    display: flex;
+    justify-content: space-between;
+
+    padding: 20px 7%;
+
+    border-top: 1px solid var(--cinza-borda);
+
+    color: var(--cinza-texto);
+
+    font-size: 11px;
+}
+
+
+/* ==========================================
+   AÇÕES DO HEADER
+========================================== */
+
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+
+/* BOTÃO VOLTAR PARA A LOJA */
+
+.btn-loja {
+    min-height: 42px;
+
+    padding: 0 18px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 8px;
+
+    background-color: #111111;
+
+    color: #ffffff;
+
+    border: 1px solid #111111;
+
+    text-decoration: none;
+
+    font-size: 12px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: 0.25s;
+}
+
+
+.btn-loja:hover {
+    background-color: #ffffff;
+
+    color: #111111;
+
+    border-color: #111111;
+
+    transform: translateY(-2px);
+}
+
+
+/* RESPONSIVO */
+
+@media (max-width: 650px) {
+
+    .header-actions {
+        gap: 6px;
+    }
+
+
+    .btn-loja {
+        padding: 0 12px;
+
+        font-size: 0;
+    }
+
+
+    .btn-loja::before {
+        content: "🏠";
+
+        font-size: 18px;
+    }
+
+
+    .btn-sair {
+        padding: 10px 12px;
+    }
+
+}
+
+/* =========================
+   RESPONSIVO
+========================= */
+
+@media (max-width: 750px) {
+
+    .cards,
+    .system-info {
+        grid-template-columns: 1fr;
+    }
+
+    .welcome-icon {
+        display: none;
+    }
+}
+
+@media (max-width: 500px) {
+
+    .dashboard-header {
+        padding: 15px 5%;
+    }
+
+    .dashboard {
+        width: 90%;
+        padding: 35px 0;
+    }
+
+    .header-title .logo img {
+        width: 90px;
+    }
+
+    .header-title h1 {
+        font-size: 16px;
+    }
+
+    .welcome h2 {
+        font-size: 25px;
+    }
+
+    .dashboard-footer {
+        flex-direction: column;
+        gap: 5px;
+    }
+}
+
+
+/* =========================
+   ANIMAÇÃO
+========================= */
+
+@keyframes cardApear {
+
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

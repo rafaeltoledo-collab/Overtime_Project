@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Criar conta</title>
+    <link rel="stylesheet" href="../assets/css/style2.css">
+</head>
+
+<body>
+<div class="circulo circulo-1"></div>
+<div class="circulo circulo-2"></div>
+
+    <div class="login-container">
+
+        <div class="login-card">
+
+            <div class="title">
+                <span class="login-icon">
+                    <img src="../assets/imagens/OVERTIMERRR.png" alt="">
+                </span>
+
+                <h1>Criar conta</h1>
+                <p>Preencha os dados abaixo para começar</p>
+            </div>
+
+            <form id="cadastroForm">
+
+                <div class="input-grupo">
+                    <label for="nome">Nome completo</label>
+
+                    <div class="input-box">
+                        <span class="envelope">&#X1F464</span>
+                        <input
+                            type="text"
+                            id="nome"
+                            name="nome"
+                            placeholder="Digite seu nome"
+                            required
+                        >
+                    </div>
+                </div>
+
+                <div class="input-grupo">
+                    <label for="email">E-mail</label>
+
+                    <div class="input-box">
+                        <span class="envelope">&#X1F582</span>
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            placeholder="Digite seu e-mail"
+                            required
+                        >
+                    </div>
+                </div>
+
+                <div class="input-grupo">
+                    <label for="senha">Senha</label>
+
+                    <div class="input-box">
+                        <span class="cadeado">&#x1F512</span>
+                        <input
+                            type="password"
+                            id="senha"
+                            name="senha"
+                            placeholder="Crie uma senha"
+                            minlength="6"
+                            required
+                        >
+                    </div>
+                </div>
+
+                <div class="input-grupo">
+                    <label for="confirmarSenha">Confirmar senha</label>
+
+                    <div class="input-box">
+                        <span class="cadeado">&#x1F512</span>
+                        <input
+                            type="password"
+                            id="confirmarSenha"
+                            name="confirmarSenha"
+                            placeholder="Repita a senha"
+                            minlength="6"
+                            required
+                        >
+                    </div>
+                </div>
+
+                <div class="termos">
+                    <label for="termos">
+                        <input type="checkbox" name="termos" id="termos" required>
+                        <span>Li e aceito os <a href="termos.html" target="_blank">Termos de Uso</a> e a <a href="termos.html" target="_blank">Política de Privacidade</a></span>
+                    </label>
+                </div>
+
+                <button type="submit" id="btn-cadastro" class="btn-login">
+                    Criar conta
+                </button>
+
+                <div id="message"></div>
+            </form>
+
+            <div class="register">
+                <p>Já tem uma conta? <a href="../login.html" class="criarconta">Fazer login</a></p>
+            </div>
+
+        </div>
+
+    </div>
+
+<script>
+    document.getElementById("cadastroForm").addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        const senha = document.getElementById("senha").value;
+        const confirmarSenha = document.getElementById("confirmarSenha").value;
+        const message = document.getElementById("message");
+
+        if (senha !== confirmarSenha) {
+            message.style.color = "red";
+            message.textContent = "As senhas não coincidem.";
+            return;
+        }
+
+        // Aqui entraria a chamada real para o backend criar a conta
+        message.style.color = "green";
+        message.textContent = "Conta criada com sucesso! Redirecionando para o login...";
+
+        setTimeout(function () {
+            window.location.href = "../login.html";
+        }, 1500);
+    });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,1070 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap');
+
+/* Remove margens e espaçamentos padrão, facilita o controle dos tamanhos e define a fonte*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Space Grotesk",sans-serif;
+}
+
+/* Define a cor padrão dos links */
+a{
+    color: rgb(255, 0, 0);
+}
+
+/* Define o estilo do link para criar uma conta */
+a.criarconta{
+    color: rgb(240, 0, 20);
+    font-size: 16px;
+    
+}
+
+/* Esconde os botões padrão do campo de senha no Internet Explorer/Edge */
+input[type="password"]::-ms-reveal, 
+input[type="password"]::-ms-clear {
+    display: none;
+} 
+
+/* Define a cor do ícone de envelope */
+.envelope{
+    color: aliceblue;
+}
+
+/* Define a cor do ícone de cadeado */
+.cadeado{
+    color: aliceblue;
+}
+
+/* Organiza os elementos de registro no centro da tela */
+.register {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    color: aliceblue;
+    
+}
+
+
+/* Define o estilo geral da página */
+body {
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: relative;
+
+    overflow: hidden;
+   
+}
+
+/* Cria uma luz azul suave no centro da tela */
+body::before {
+    content: "";
+    position: fixed;
+    width: 600px;
+    height: 600px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+   
+    pointer-events: none;
+    z-index: 0;
+}
+
+
+/* Organiza e centraliza o título */
+.title {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+/* Define o tamanho e o estilo do título principal */
+.title h1 {
+    margin-top: 7px;
+    font-size: 40px;
+    color: rgb(0, 0, 0);
+    letter-spacing: 2px;
+
+}
+
+/* Define a cor dos textos dentro de span */
+span{
+    color: rgb(10, 6, 6);
+}
+
+/* Define o estilo do texto abaixo do título */
+.title p {
+    margin-top: 8px;
+    color: rgba(0, 0, 0, 0.7);
+    font-size: 14px;
+}
+
+/* Cria um espaço entre os grupos de campos */
+.input-grupo {
+    margin-bottom: 20PX;
+}
+
+/* Define o estilo das etiquetas dos campos */
+.input-grupo label {
+    display: block;
+    margin-bottom: 8px;
+    color: rgb(253, 21, 21);
+    font-weight: bold;
+    
+} 
+
+/* Define o tamanho e a posição do container de login */
+.login-container {
+    width: 100%;
+    max-width: 440px;
+    padding: 20px;
+    /* Mantém o container acima dos efeitos do fundo */
+    position: relative;
+    z-index: 2;
+}
+
+/* Cria o cartão principal do formulário */
+.login-card {
+    width: 100%;
+    padding: 40px;
+    border-radius: 28px;
+
+    /* Fundo transparente para criar o efeito de vidro */
+    background: rgba(255, 255, 255, 0.65);
+    backdrop-filter: blur(20px);
+   
+    border: 2px solid rgba(80, 43, 43, 0.5) !important;
+
+    /* Aplica uma animação quando o card aparece */
+    animation: cardApear 0.8s ease-in-out;
+}
+
+/* Cria uma linha colorida na parte superior do card */
+.login-card::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 20%;
+
+    width: 60%;
+    height: 1px;
+
+
+    opacity: 0.8;
+}
+
+/* Define o estilo do botão de login */
+.btn-login {
+    position: relative;
+
+    width: 100%;
+    height: 48px;
+
+    margin-top: 5px;
+
+    border: none;
+    border-radius: 12px;
+
+    overflow: hidden;
+
+    cursor: pointer;
+
+    color: white;
+
+    font-size: 16px;
+    font-weight: bold;
+
+    letter-spacing: 1px;
+
+    /* Cria o fundo colorido do botão */
+    background: linear-gradient(
+        90deg,
+        #0c0d11,
+        #0d0c13,
+        #d61525,
+        #ee0808,
+        #0e161d
+    );
+
+    /* Define o tamanho do gradiente para permitir a animação */
+    background-size: 300% 100%;
+
+    /* Faz o gradiente se movimentar */
+    animation: gradientMove 5s ease infinite;
+
+    /* Cria um brilho ao redor do botão 
+    /* Deixa as mudanças do botão mais suaves */
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+#btn-login:hover {
+    /* Levanta o botão um pouco quando o mouse passa por cima */
+    transform: translateY(-2px);
+
+}
+
+/* Cria um brilho que passa pelo botão */
+.btn-login::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 50%;
+    height: 100%;
+
+    /* Cria o efeito de luz branca */
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(252, 0, 0, 0.35),
+        transparent
+    );
+
+    /* Inclina o brilho */
+    transform: skewX(-20deg);
+
+    /* Faz o brilho atravessar o botão */
+    animation: shine 3s infinite;
+}
+
+/* Define o estilo da mensagem exibida na tela */
+#message{
+    margin-top: 15px;
+    text-align: center;
+    font-size: 12px;
+    min-height: 18px;
+}
+
+/* Organiza e centraliza a área de registro */
+.register{
+    margin-top: 25px;
+    text-align: center;
+    font-size: 13px;
+    min-height: 18px;
+
+}
+
+/* Define o estilo do ícone de login */
+.login-icon{
+   border: none;
+   border-radius: 10px;
+   padding: 10px;
+   margin: 5px ;
+}
+.login-icon img {
+    width: 100px;
+}
+
+/* Organiza o campo de entrada e o ícone */
+.input-box {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 48px;
+    padding: 0 12px;
+    border-radius: 15px;
+
+    /* Define a cor transparente do campo */
+    background-color: rgba(255, 255, 255, 0.08);
+
+    /* Cria uma borda levemente visível */
+    border: 1px solid rgba(180, 33, 33, 0.2);
+
+    /* Faz a mudança de estilo ficar suave */
+    transition: 0.3s;
+}
+
+/* Muda o visual do campo quando ele está selecionado */
+.input-box:focus-within {
+    border-color: #000000;
+
+    background-color: rgba(38, 142, 226, 0.06);
+
+    /* Cria um brilho ao redor do campo selecionado */
+    box-shadow:
+        0 0 8px rgba(255, 0, 0, 0.411),
+        0 0 18px rgba(120, 50, 255, 0.12);
+}
+
+/* Define o estilo do campo onde o usuário digita */
+.input-box input {
+    width: 100%;
+    height: 100%;
+
+    /* deixa sem borda na hora que clica para escrever */
+    border: none;
+
+    /* quando seleciona deixa sem nenhuma cor  */
+    outline: none;
+
+    /* Deixa o fundo do input transparente */
+    background-color: transparent;
+
+    color: rgb(145, 76, 76);
+
+    font-size: 15px;
+}
+
+
+/* Define a cor do texto de exemplo dentro do campo */
+.input-box input::placeholder {
+    color: rgba(190, 118, 118, 0.897);
+}
+
+/* Define o tamanho e o espaço do ícone dentro do campo */
+.input-box span {
+    margin-right: 10px;
+    font-size: 18px;
+}
+
+/* Define o estilo do botão que mostra ou esconde a senha */
+.toggle-password {
+    border: none;
+    background: transparent;
+
+    /* Mostra que o botão pode ser clicado */
+    cursor: pointer;
+
+    opacity: 0.6;
+    font-size: 16px;
+
+    /* Faz a mudança de opacidade ficar suave */
+    transition:0.2s;
+}
+
+/* Aumenta a visibilidade do botão quando o mouse passa por cima */
+.toggle-password:hover{
+    opacity: 1;
+}
+
+/* Organiza as opções do formulário */
+.options {
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 1px;
+
+    margin: 10px 0 20px;
+
+    font-size: 13px;
+}
+
+/* Impede que o link quebre em duas linhas */
+.options a {
+    white-space: nowrap;
+    padding-left: 8px;
+}
+
+
+/* Organiza os termos e o link */
+.termos{
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 1px;
+
+    margin: 10px 0 20px;
+
+    font-size: 13px;
+}
+
+/* Impede que o link dos termos quebre em duas linhas */
+.termos a{
+    white-space: nowrap;
+    padding-left: 8px;
+}
+
+
+/* Cria os círculos de luz que ficam no fundo */
+
+
+
+/* Define o movimento da luz azul */
+@keyframes movimentoAzul {
+
+    /* Define a posição inicial e final */
+    0%, 100% {
+        transform: translate(0, 0) scale(1);
+    }
+
+    /* Move e aumenta o círculo no meio da animação */
+    50% {
+        transform: translate(120px, 100px) scale(1.15);
+    }
+}
+
+
+/* Define o movimento da luz roxa */
+@keyframes movimentoRoxo {
+
+    /* Define a posição inicial e final */
+    0%, 100% {
+        transform: translate(0, 0) scale(1);
+    }
+
+    /* Move e aumenta o círculo no meio da animação */
+    50% {
+        transform: translate(-120px, -100px) scale(1.15);
+    }
+}
+
+/* Define a animação de entrada do card */
+@keyframes cardApear{
+    from{
+        /* Começa invisível e um pouco abaixo */
+        opacity: 0;
+        transform: translateY(50px) scale(0.95);
+    }
+    to{
+        /* Termina visível e na posição normal */
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* Define o movimento do gradiente do botão */
+@keyframes gradientMove {
+    /* Começa com o gradiente na posição inicial */
+    0% {
+        background-position: 0% 50%;
+    }
+    /* Move o gradiente para o outro lado */
+    50% {
+        background-position: 100% 50%;
+    }
+    /* Volta o gradiente para a posição inicial */
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Define a animação do brilho que passa pelo botão */
+@keyframes shine {
+    /* Começa com o brilho fora do botão */
+    0% {
+        left: -100%;
+        opacity: 0;
+    }
+    /* Move o brilho até o outro lado do botão */
+    100% {
+        left: 150%;
+        opacity: 1;
+    }
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap');
+
+/* Remove margens e espaçamentos padrão, facilita o controle dos tamanhos e define a fonte*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Space Grotesk",sans-serif;
+}
+
+/* Define a cor padrão dos links */
+a{
+    color: rgb(255, 0, 0);
+}
+
+/* Define o estilo do link para criar uma conta */
+a.criarconta{
+    color: rgb(240, 0, 20);
+    font-size: 15px;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+a.criarconta:hover{
+    text-decoration: underline;
+}
+
+.register p{
+    color: rgba(0, 0, 0, 0.7);
+    font-size: 14px;
+}
+
+/* Esconde os botões padrão do campo de senha no Internet Explorer/Edge */
+input[type="password"]::-ms-reveal, 
+input[type="password"]::-ms-clear {
+    display: none;
+} 
+
+/* Define a cor do ícone de envelope */
+.envelope{
+    color: aliceblue;
+}
+
+/* Define a cor do ícone de cadeado */
+.cadeado{
+    color: aliceblue;
+}
+
+/* Organiza os elementos de registro no centro da tela */
+.register {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    color: aliceblue;
+    
+}
+
+
+/* Define o estilo geral da página */
+body {
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: relative;
+
+    overflow: hidden;
+   
+}
+
+/* Cria uma luz azul suave no centro da tela */
+body::before {
+    content: "";
+    position: fixed;
+    width: 600px;
+    height: 600px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+   
+    pointer-events: none;
+    z-index: 0;
+}
+
+
+/* Organiza e centraliza o título */
+.title {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+/* Define o tamanho e o estilo do título principal */
+.title h1 {
+    margin-top: 7px;
+    font-size: 40px;
+    color: rgb(0, 0, 0);
+    letter-spacing: 2px;
+
+}
+
+/* Define a cor dos textos dentro de span */
+span{
+    color: rgb(10, 6, 6);
+}
+
+/* Define o estilo do texto abaixo do título */
+.title p {
+    margin-top: 8px;
+    color: rgba(0, 0, 0, 0.7);
+    font-size: 14px;
+}
+
+/* Cria um espaço entre os grupos de campos */
+.input-grupo {
+    margin-bottom: 20PX;
+}
+
+/* Define o estilo das etiquetas dos campos */
+.input-grupo label {
+    display: block;
+    margin-bottom: 8px;
+    color: rgb(253, 21, 21);
+    font-weight: bold;
+    
+} 
+
+/* Define o tamanho e a posição do container de login */
+.login-container {
+    width: 100%;
+    max-width: 440px;
+    padding: 20px;
+    /* Mantém o container acima dos efeitos do fundo */
+    position: relative;
+    z-index: 2;
+}
+
+/* Cria o cartão principal do formulário */
+.login-card {
+    width: 100%;
+    padding: 40px;
+    border-radius: 28px;
+
+    /* Fundo transparente para criar o efeito de vidro */
+    background: rgba(255, 255, 255, 0.65);
+    backdrop-filter: blur(20px);
+   
+    border: 10px solid rgba(94, 81, 81, 0.774);
+
+    /* Aplica uma animação quando o card aparece */
+    animation: cardApear 0.8s ease-in-out;
+}
+
+/* Cria uma linha colorida na parte superior do card */
+.login-card::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 20%;
+
+    width: 60%;
+    height: 1px;
+
+
+    opacity: 0.8;
+}
+
+/* Define o estilo do botão de login */
+.btn-login {
+    position: relative;
+
+    width: 100%;
+    height: 48px;
+
+    margin-top: 5px;
+
+    border: none;
+    border-radius: 12px;
+
+    overflow: hidden;
+
+    cursor: pointer;
+
+    color: white;
+
+    font-size: 16px;
+    font-weight: bold;
+
+    letter-spacing: 1px;
+
+    /* Cria o fundo colorido do botão */
+    background: linear-gradient(
+        90deg,
+        #0c0d11,
+        #0d0c13,
+        #d61525,
+        #ee0808,
+        #0e161d
+    );
+
+    /* Define o tamanho do gradiente para permitir a animação */
+    background-size: 300% 100%;
+
+    /* Faz o gradiente se movimentar */
+    animation: gradientMove 5s ease infinite;
+
+    /* Cria um brilho ao redor do botão 
+    /* Deixa as mudanças do botão mais suaves */
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+#btn-login:hover {
+    /* Levanta o botão um pouco quando o mouse passa por cima */
+    transform: translateY(-2px);
+
+}
+
+/* Cria um brilho que passa pelo botão */
+.btn-login::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 50%;
+    height: 100%;
+
+    /* Cria o efeito de luz branca */
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(252, 0, 0, 0.35),
+        transparent
+    );
+
+    /* Inclina o brilho */
+    transform: skewX(-20deg);
+
+    /* Faz o brilho atravessar o botão */
+    animation: shine 3s infinite;
+}
+
+/* Define o estilo da mensagem exibida na tela */
+#message{
+    margin-top: 15px;
+    text-align: center;
+    font-size: 12px;
+    min-height: 18px;
+}
+
+/* Organiza e centraliza a área de registro */
+.register{
+    margin-top: 25px;
+    text-align: center;
+    font-size: 13px;
+    min-height: 18px;
+
+}
+
+/* Define o estilo do ícone de login */
+.login-icon{
+   border: none;
+   border-radius: 10px;
+   padding: 10px;
+   margin: 5px ;
+}
+.login-icon img {
+    width: 100px;
+}
+
+/* Organiza o campo de entrada e o ícone */
+.input-box {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 48px;
+    padding: 0 12px;
+    border-radius: 15px;
+
+    /* Define a cor transparente do campo */
+    background-color: rgba(255, 255, 255, 0.08);
+
+    /* Cria uma borda levemente visível */
+    border: 1px solid rgba(180, 33, 33, 0.2);
+
+    /* Faz a mudança de estilo ficar suave */
+    transition: 0.3s;
+}
+
+/* Muda o visual do campo quando ele está selecionado */
+.input-box:focus-within {
+    border-color: #000000;
+
+    background-color: rgba(38, 142, 226, 0.06);
+
+    /* Cria um brilho ao redor do campo selecionado */
+    box-shadow:
+        0 0 8px rgba(255, 0, 0, 0.411),
+        0 0 18px rgba(120, 50, 255, 0.12);
+}
+
+/* Define o estilo do campo onde o usuário digita */
+.input-box input {
+    width: 100%;
+    height: 100%;
+
+    /* deixa sem borda na hora que clica para escrever */
+    border: none;
+
+    /* quando seleciona deixa sem nenhuma cor  */
+    outline: none;
+
+    /* Deixa o fundo do input transparente */
+    background-color: transparent;
+
+    color: rgb(145, 76, 76);
+
+    font-size: 15px;
+}
+
+
+/* Define a cor do texto de exemplo dentro do campo */
+.input-box input::placeholder {
+    color: rgba(190, 118, 118, 0.897);
+}
+
+/* Define o tamanho e o espaço do ícone dentro do campo */
+.input-box span {
+    margin-right: 10px;
+    font-size: 18px;
+}
+
+/* Define o estilo do botão que mostra ou esconde a senha */
+.toggle-password {
+    border: none;
+    background: transparent;
+
+    /* Mostra que o botão pode ser clicado */
+    cursor: pointer;
+
+    opacity: 0.6;
+    font-size: 16px;
+
+    /* Faz a mudança de opacidade ficar suave */
+    transition:0.2s;
+}
+
+/* Aumenta a visibilidade do botão quando o mouse passa por cima */
+.toggle-password:hover{
+    opacity: 1;
+}
+
+/* Organiza as opções do formulário */
+.options {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 8px;
+
+    margin: 10px 0 20px;
+
+    font-size: 13px;
+}
+
+/* Estilo do checkbox "Lembrar-me" */
+.options .remember {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: rgba(0, 0, 0, 0.75);
+    cursor: pointer;
+}
+
+.options .remember input[type="checkbox"] {
+    accent-color: #ee0808;
+    width: 15px;
+    height: 15px;
+    cursor: pointer;
+}
+
+/* Link "Esqueci minha senha" */
+.options a {
+    color: #ee0808;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.options a:hover {
+    text-decoration: underline;
+}
+
+/* Impede que o link quebre em duas linhas */
+.options a {
+    white-space: nowrap;
+    padding-left: 8px;
+}
+
+
+/* Organiza os termos e o link */
+.termos{
+    margin: 10px 0 20px;
+    font-size: 13px;
+}
+
+.termos label {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    color: rgba(0, 0, 0, 0.75);
+    cursor: pointer;
+    line-height: 1.4;
+}
+
+.termos input[type="checkbox"] {
+    margin-top: 2px;
+    accent-color: #ee0808;
+    width: 15px;
+    height: 15px;
+    flex-shrink: 0;
+    cursor: pointer;
+}
+
+/* Links dentro dos termos (Termos de Uso / Política de Privacidade) */
+.termos a{
+    color: #ee0808;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.termos a:hover{
+    text-decoration: underline;
+}
+
+/* ==========================================
+   Estilos para páginas de login_parts
+   (recuperar senha, termos, criar conta)
+   ========================================== */
+
+/* Card mais largo, usado na página de termos/privacidade */
+.login-container.wide,
+.login-card.wide {
+    max-width: 640px;
+}
+
+/* Texto explicativo abaixo do título nas páginas auxiliares */
+.subtitle {
+    text-align: center;
+    color: rgba(0, 0, 0, 0.65);
+    font-size: 14px;
+    margin: -25px 0 25px;
+}
+
+/* Área de conteúdo com rolagem para os termos/política */
+.policy-content {
+    max-height: 380px;
+    overflow-y: auto;
+    text-align: left;
+    padding-right: 10px;
+    margin-bottom: 24px;
+    color: rgba(0, 0, 0, 0.8);
+    font-size: 14px;
+    line-height: 1.65;
+}
+
+.policy-content h2 {
+    font-size: 16px;
+    color: rgb(0, 0, 0);
+    margin: 18px 0 6px;
+}
+
+.policy-content h2:first-child {
+    margin-top: 0;
+}
+
+.policy-content p {
+    margin-bottom: 10px;
+}
+
+/* Barra de rolagem discreta */
+.policy-content::-webkit-scrollbar {
+    width: 6px;
+}
+
+.policy-content::-webkit-scrollbar-thumb {
+    background: rgba(238, 8, 8, 0.4);
+    border-radius: 10px;
+}
+
+/* Link de "voltar para o login" usado nas páginas auxiliares */
+.back-link {
+    display: inline-block;
+    margin-top: 8px;
+    color: #ee0808;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.back-link:hover {
+    text-decoration: underline;
+}
+
+
+/* Cria os círculos de luz que ficam no fundo */
+
+
+
+/* Define o movimento da luz azul */
+@keyframes movimentoAzul {
+
+    /* Define a posição inicial e final */
+    0%, 100% {
+        transform: translate(0, 0) scale(1);
+    }
+
+    /* Move e aumenta o círculo no meio da animação */
+    50% {
+        transform: translate(120px, 100px) scale(1.15);
+    }
+}
+
+
+/* Define o movimento da luz roxa */
+@keyframes movimentoRoxo {
+
+    /* Define a posição inicial e final */
+    0%, 100% {
+        transform: translate(0, 0) scale(1);
+    }
+
+    /* Move e aumenta o círculo no meio da animação */
+    50% {
+        transform: translate(-120px, -100px) scale(1.15);
+    }
+}
+
+/* Define a animação de entrada do card */
+@keyframes cardApear{
+    from{
+        /* Começa invisível e um pouco abaixo */
+        opacity: 0;
+        transform: translateY(50px) scale(0.95);
+    }
+    to{
+        /* Termina visível e na posição normal */
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* Define o movimento do gradiente do botão */
+@keyframes gradientMove {
+    /* Começa com o gradiente na posição inicial */
+    0% {
+        background-position: 0% 50%;
+    }
+    /* Move o gradiente para o outro lado */
+    50% {
+        background-position: 100% 50%;
+    }
+    /* Volta o gradiente para a posição inicial */
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Define a animação do brilho que passa pelo botão */
+@keyframes shine {
+    /* Começa com o brilho fora do botão */
+    0% {
+        left: -100%;
+        opacity: 0;
+    }
+    /* Move o brilho até o outro lado do botão */
+    100% {
+        left: 150%;
+        opacity: 1;
+    }
+}
+
+/*responsividade*/
+
+/* Ajusta o formulário para telas menores */
+@media(max-width: 480px){
+    /* Diminui o espaçamento externo */
+    .login-container{
+        padding: 15px;
+    }
+    /* Diminui o espaçamento interno do card */
+    .login-card{
+        padding: 30px 22px;
+    }
+    /* Diminui o tamanho do título em telas pequenas */
+    h1{
+        font-size: 24px;
+    }
+}

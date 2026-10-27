@@ -1,0 +1,1912 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Inter", sans-serif;
+    background-color: #ffffff;
+    color: #171717;
+    overflow-x: hidden;
+}
+
+:root {
+    --vermelho: #d90416;
+    --vermelho-escuro: #aa0010;
+    --preto: #0b0b0b;
+    --preto-claro: #171717;
+    --branco: #ffffff;
+    --cinza-claro: #f3f3f3;
+    --cinza: #dedede;
+    --cinza-texto: #727272;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button {
+    border: none;
+    background: none;
+}
+
+img {
+    max-width: 100%;
+}
+
+.container {
+    max-width: 1450px;
+}
+
+/* Barra do topo */
+
+
+.topbar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: nowrap;
+    background-color: #ab0214;
+    color: white;
+    padding: 5px;
+    border-radius: 2px;
+    overflow: hidden;
+}
+.topbar .tracker {
+    display: inline-block;
+    white-space: nowrap;
+    margin-right: 10px;
+    font-size: 12px;
+    animation: scroll 20s linear infinite;
+}
+.topbar span {
+    margin: 5px;
+    display: inline-block;
+    text-align: center;
+    font-size: 14px;
+}
+.topbar span::after {
+    padding: 10px;
+    content: " | ";
+}
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(50%);
+    }
+}
+
+.barra-topo {
+    width: 100%;
+    min-height: 38px;
+    background-color: var(--vermelho);
+    color: var(--branco);
+    display: flex;
+    align-items: center;
+}
+
+.conteudo-topo {
+    width: 100%;
+    min-height: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.item-topo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+    white-space: nowrap;
+}
+
+.item-topo i {
+    font-size: 15px;
+    color: white;
+}
+
+.linha-topo {
+    width: 1px;
+    height: 18px;
+    background-color: rgba(255, 255, 255, 0.45);
+}
+
+/* Cabeçalho */
+.cabecalho {
+    position: relative;
+    z-index: 1000;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.98);
+    border-bottom: 1px solid #e8e8e8;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+}
+
+.conteudo-cabecalho {
+    min-height: 88px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.logo {
+    width: 200px;
+    min-width: 185px;
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    width: 100%;
+    height: auto;
+    max-height: 500px;
+    object-fit: contain;
+    object-position: left center;
+}
+
+/* Menu lateral */
+.menu-lateral {
+    width: 360px !important;
+    border: none;
+}
+
+.menu-lateral .offcanvas-header {
+    min-height: 90px;
+    padding: 20px 25px;
+    border-bottom: 1px solid #eeeeee;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo-lateral img {
+    width: 160px;
+    height: auto;
+    object-fit: contain;
+}
+
+.links-lateral {
+    display: flex;
+    flex-direction: column;
+}
+
+.links-lateral a,
+.extras-lateral a {
+    min-height: 58px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 0 5px;
+    border-bottom: 1px solid #eeeeee;
+    color: #181818;
+    font-size: 14px;
+    font-weight: 600;
+    transition: 0.2s;
+}
+
+.links-lateral a i,
+.extras-lateral a i {
+    width: 25px;
+    color: #555555;
+    font-size: 20px;
+    text-align: center;
+}
+
+.links-lateral a:hover,
+.extras-lateral a:hover {
+    color: var(--vermelho);
+    padding-left: 10px;
+}
+
+.links-lateral a:hover i,
+.extras-lateral a:hover i {
+    color: var(--vermelho);
+}
+
+.links-lateral .oferta-lateral {
+    color: var(--vermelho);
+}
+
+.divisao-lateral {
+    height: 25px;
+}
+
+.extras-lateral {
+    display: flex;
+    flex-direction: column;
+}
+
+.botao-menu {
+    width: 44px;
+    height: 44px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    border: 1px solid #e5e5e5;
+    border-radius: 4px;
+    color: #111111;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.botao-menu i {
+    font-size: 26px;
+}
+
+.botao-menu:hover {
+    background-color: #111111;
+    border-color: #111111;
+    color: white;
+}
+
+/* Menu principal */
+.menu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    flex: 1;
+}
+
+.link-menu {
+    position: relative;
+    height: 88px;
+    display: flex;
+    align-items: center;
+    color: #1b1b1b;
+    font-size: 13px;
+    font-weight: 600;
+    transition: 0.25s;
+}
+
+.link-menu::after {
+    content: "";
+    position: absolute;
+    bottom: 18px;
+    left: 50%;
+    width: 0;
+    height: 3px;
+    background-color: var(--vermelho);
+    transform: translateX(-50%);
+    transition: width 0.3s ease;
+}
+
+.link-menu:hover {
+    color: var(--vermelho);
+}
+
+.link-menu:hover::after {
+    width: 100%;
+}
+
+.link-menu.active {
+    color: #111111;
+    font-weight: 700;
+}
+
+.link-menu.active::after {
+    width: 100%;
+}
+
+.menu-oferta {
+    color: var(--vermelho);
+}
+
+/* Busca */
+.busca {
+    width: 280px;
+    height: 42px;
+    background-color: #f5f5f5;
+    border: 1px solid #e2e2e2;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 0 14px;
+    transition: 0.3s;
+}
+
+.busca:focus-within {
+    background-color: white;
+    border-color: #bbbbbb;
+    box-shadow: 0 0 0 3px rgba(217, 4, 22, 0.05);
+}
+
+.busca i {
+    font-size: 17px;
+    color: #333333;
+}
+
+.busca input {
+    width: 100%;
+    border: none;
+    outline: none;
+    background: transparent;
+    font-size: 12px;
+    color: #222222;
+}
+
+.busca input::placeholder {
+    color: #8b8b8b;
+}
+
+
+/* Ícones */
+.acoes-cabecalho {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.acao-cabecalho {
+    position: relative;
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    color: #111111;
+    cursor: pointer;
+    transition: 0.25s;
+}
+
+.acao-cabecalho i {
+    font-size: 24px;
+}
+
+.acao-cabecalho:hover {
+    background-color: #f0f0f0;
+    color: var(--vermelho);
+}
+
+.qtd-carrinho {
+    position: absolute;
+    top: -1px;
+    right: 0;
+    min-width: 18px;
+    height: 18px;
+    padding: 0 5px;
+    background-color: var(--vermelho);
+    color: white;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 9px;
+    font-weight: 800;
+}
+
+/* Carrossel */
+.destaque {
+    width: 100%;
+    background-color: #111111;
+}
+
+#overtimeCarousel {
+    width: 100%;
+}
+
+.carousel-inner {
+    width: 100%;
+}
+
+.carousel-item {
+    width: 100%;
+}
+
+.conteudo-destaque {
+    position: relative;
+    width: 100%;
+    height: 590px;
+    overflow: hidden;
+    background-color: #111111;
+}
+
+.imagem-destaque {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transform: scale(1.01);
+    transition: transform 7s ease;
+}
+
+.carousel-item.active .imagem-destaque {
+    transform: scale(1.06);
+}
+
+.imagem-nhl {
+    object-position: center 48%;
+}
+
+.sombra-destaque {
+    position: absolute;
+    z-index: 1;
+    inset: 0;
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0.78) 0%, rgba(0, 0, 0, 0.62) 28%, rgba(0, 0, 0, 0.24) 58%, rgba(0, 0, 0, 0.05) 100%), linear-gradient(0deg, rgba(0, 0, 0, 0.22), transparent 45%);
+}
+
+.sombra-escura {
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0.82) 0%, rgba(0, 0, 0, 0.62) 30%, rgba(0, 0, 0, 0.17) 68%, rgba(0, 0, 0, 0.08) 100%);
+}
+
+.area-destaque {
+    position: relative;
+    z-index: 5;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.texto-destaque {
+    width: 620px;
+    max-width: 55%;
+    color: white;
+    padding-left: 35px;
+}
+
+.subtitulo-destaque {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 12px;
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 5px;
+}
+
+.subtitulo-destaque::before {
+    content: "";
+    width: 35px;
+    height: 3px;
+    background-color: var(--vermelho);
+    display: inline-block;
+}
+
+.texto-destaque h1,
+.titulo-destaque {
+    margin: 0;
+    font-family: "Oswald", sans-serif;
+    font-size: clamp(58px, 5.5vw, 94px);
+    font-weight: 700;
+    line-height: 0.95;
+    letter-spacing: -2px;
+    text-transform: uppercase;
+}
+
+.texto-destaque h1 strong,
+.titulo-destaque strong {
+    display: block;
+    color: var(--vermelho);
+    font-style: italic;
+    font-weight: 700;
+}
+
+.texto-destaque p {
+    width: 500px;
+    max-width: 100%;
+    margin-top: 22px;
+    margin-bottom: 0;
+    color: rgba(255, 255, 255, 0.92);
+    font-size: 15px;
+    line-height: 1.65;
+    font-weight: 400;
+}
+
+.botoes-destaque {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 30px;
+}
+
+.botao-destaque {
+    min-height: 50px;
+    padding: 0 25px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 0.6px;
+    transition: 0.25s;
+}
+
+.botao-vermelho {
+    color: white;
+    background-color: var(--vermelho);
+    border: 2px solid var(--vermelho);
+}
+
+.botao-vermelho:hover {
+    background-color: var(--vermelho-escuro);
+    border-color: var(--vermelho-escuro);
+    color: white;
+    transform: translateY(-2px);
+}
+
+.botao-branco {
+    color: white;
+    background-color: rgba(0, 0, 0, 0.18);
+    border: 1px solid rgba(255, 255, 255, 0.65);
+}
+
+.botao-branco:hover {
+    color: #111111;
+    background-color: white;
+    border-color: white;
+}
+
+.texto-lado {
+    position: absolute;
+    z-index: 5;
+    right: 6.7%;
+    bottom: 65px;
+    padding-right: 20px;
+    border-right: 3.5px solid var(--vermelho);
+    color: white;
+    font-family: "Oswald", sans-serif;
+    font-size: 18px;
+    font-style: italic;
+    font-weight: 600;
+    line-height: 1.15;
+    letter-spacing: 2px;
+    text-align: right;
+    transform: rotate(-4deg);
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.989);
+}
+
+.controle-slide {
+    width: 80px;
+    opacity: 1;
+}
+
+.seta-slide {
+    width: 46px;
+    height: 46px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.42);
+    background-color: rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(4px);
+    transition: 0.25s;
+}
+
+.controle-slide:hover .seta-slide {
+    background-color: var(--vermelho);
+    border-color: var(--vermelho);
+}
+
+.seta-slide i {
+    font-size: 20px;
+}
+
+.indicadores {
+    margin-bottom: 24px;
+    gap: 6px;
+}
+
+.indicadores [data-bs-target] {
+    width: 9px;
+    height: 9px;
+    margin: 0;
+    border: none;
+    border-radius: 30px;
+    background-color: white;
+    opacity: 0.55;
+    transition: 0.3s;
+}
+
+.indicadores .active {
+    width: 34px;
+    background-color: var(--vermelho);
+    opacity: 1;
+}
+
+/* Ligas */
+.ligas {
+    padding: 55px 0;
+    background-color: #ffffff;
+}
+
+.ligas .container {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    align-items: center;
+    gap: 50px;
+}
+
+.titulo-secao {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+    margin-bottom: 0;
+}
+
+.chamada-secao {
+    display: block;
+    margin-bottom: 6px;
+    color: var(--vermelho);
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+.titulo-secao h2 {
+    margin: 0;
+    font-family: "Oswald", sans-serif;
+    font-size: 32px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.ver-todas {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 8px;
+    color: #333333;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    transition: 0.25s;
+}
+
+.ver-todas i {
+    font-size: 16px;
+    transition: transform 0.25s;
+}
+
+.ver-todas:hover {
+    color: var(--vermelho);
+}
+
+.ver-todas:hover i {
+    transform: translateX(5px);
+}
+
+.grade-ligas {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    align-items: center;
+    gap: 20px;
+}
+
+.card-liga {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #151515;
+    padding: 10px;
+    transition: 0.3s;
+}
+
+.card-liga:hover {
+    color: #151515;
+    transform: translateY(-7px);
+}
+
+.logo-liga {
+    position: relative;
+    width: 125px;
+    height: 125px;
+    margin-bottom: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background-color: #f1f1f1;
+    border: 1px solid #edededcb;
+    overflow: hidden;
+    transition: 0.35s;
+}
+
+.logo-liga::before {
+    content: "";
+    position: absolute;
+    inset: 8px;
+    border-radius: 50%;
+    border: 1px solid transparent;
+    transition: 0.35s;
+}
+
+.logo-liga i,
+.logo-liga img {
+    position: relative;
+    z-index: 2;
+    transition: 0.35s;
+}
+
+.logo-liga i {
+    color: #151515;
+    font-size: 45px;
+}
+
+.logo-liga img {
+    width: 68px;
+    height: 68px;
+    object-fit: contain;
+}
+
+.card-liga:hover .logo-liga {
+    background-color: #111111;
+    border-color: #111111;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+}
+
+.card-liga:hover .logo-liga::before {
+    border-color: var(--vermelho);
+}
+
+.card-liga:hover .logo-liga i,
+.card-liga:hover .logo-liga img {
+    transform: scale(1.08);
+}
+
+.card-liga:hover .logo-liga i {
+    color: white;
+}
+
+.logo-especial {
+    background-color: #ededed;
+}
+
+.card-liga h3 {
+    margin: 0 0 5px;
+    font-family: "Oswald", sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.card-liga p {
+    margin: 0;
+    color: var(--cinza-texto);
+    font-size: 11px;
+}
+
+
+
+/* Categorias */
+
+.categorias {
+    padding: 55px 0 65px;
+    background-color: #2d2a2a;
+}
+
+.topo-categorias {
+    margin-bottom: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.titulo-categorias {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+.titulo-categorias h2 {
+    margin: 0;
+    font-family: "Oswald", sans-serif;
+    font-size: 27px;
+    font-weight: 700;
+}
+
+.titulo-categorias span {
+    width: 45px;
+    height: 2px;
+    background-color: var(--vermelho);
+}
+
+.topo-categorias > a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #555555;
+    font-size: 11px;
+    letter-spacing: 1px;
+    transition: 0.2s;
+}
+
+.topo-categorias > a:hover {
+    color: var(--vermelho);
+}
+
+.lista-categorias {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 14px;
+}
+
+.card-categoria {
+    position: relative;
+    height: 190px;
+    overflow: hidden;
+    border-radius: 4px;
+    color: white;
+}
+
+.card-categoria > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.4s;
+}
+
+.sombra-card {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        90deg,
+        rgba(0, 0, 0, 0.72),
+        rgba(0, 0, 0, 0.2)
+    );
+}
+
+.texto-card {
+    position: absolute;
+    z-index: 2;
+    top: 25px;
+    left: 24px;
+}
+
+.texto-card h3 {
+    margin: 0 0 7px;
+    font-family: "Oswald", sans-serif;
+    font-size: 23px;
+    font-weight: 700;
+}
+
+.texto-card p {
+    margin: 0 0 18px;
+    font-size: 11px;
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+.texto-card span {
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid white;
+    border-radius: 50%;
+    font-size: 14px;
+}
+
+.card-categoria:hover > img {
+    transform: scale(1.06);
+}
+
+.card-categoria:hover .texto-card span {
+    background-color: var(--vermelho);
+    border-color: var(--vermelho);
+}
+
+/* =========================================================
+   PRODUTOS EM DESTAQUE
+========================================================= */
+
+.produtos-destaque {
+    padding: 65px 0 75px;
+    background-color: #f6f6f6;
+}
+
+
+/* TOPO DA SEÇÃO */
+
+.topo-produtos {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+
+    gap: 20px;
+
+    margin-bottom: 30px;
+}
+
+
+.titulo-produtos {
+    display: flex;
+    align-items: flex-end;
+
+    gap: 20px;
+}
+
+
+.chamada-produtos {
+    display: block;
+
+    margin-bottom: 5px;
+
+    color: var(--vermelho);
+
+    font-size: 9px;
+    font-weight: 800;
+
+    letter-spacing: 3px;
+}
+
+
+.titulo-produtos h2 {
+    margin: 0;
+
+    font-family: "Oswald", sans-serif;
+
+    font-size: 30px;
+    font-weight: 700;
+
+    color: #151515;
+}
+
+
+.linha-vermelha {
+    width: 50px;
+    height: 3px;
+
+    margin-bottom: 8px;
+
+    background-color: var(--vermelho);
+}
+
+
+.ver-produtos {
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+
+    color: #555555;
+
+    font-size: 11px;
+    font-weight: 700;
+
+    letter-spacing: 0.8px;
+
+    transition: 0.25s;
+}
+
+
+.ver-produtos i {
+    font-size: 17px;
+
+    transition: 0.25s;
+}
+
+
+.ver-produtos:hover {
+    color: var(--vermelho);
+}
+
+
+.ver-produtos:hover i {
+    transform: translateX(5px);
+}
+
+
+/* =========================================================
+   GRADE DOS PRODUTOS
+========================================================= */
+
+.grade-produtos {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 18px;
+}
+
+
+
+/* ==========================================
+   OVERTIME - CARD DOS PRODUTOS
+========================================== */
+
+.produto-card {
+    position: relative;
+    overflow: hidden;
+
+    background-color: #ffffff;
+
+    border: 1px solid #e9e9e9;
+    border-radius: 10px;
+
+    margin-bottom: 20px;
+
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+
+/* ==========================================
+   EFEITO AO PASSAR O MOUSE
+========================================== */
+
+.produto-card:hover {
+    transform: translateY(-5px);
+
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.09);
+}
+
+
+/* ==========================================
+   INFORMAÇÕES DO PRODUTO
+========================================== */
+
+.produto-info {
+    padding: 18px;
+}
+
+
+/* ==========================================
+   LIGA ESPORTIVA
+========================================== */
+
+.produto-liga {
+    display: block;
+
+    margin-bottom: 5px;
+
+    color: var(--vermelho);
+
+    font-size: 9px;
+    font-weight: 800;
+
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+}
+
+
+/* ==========================================
+   NOME DO PRODUTO
+========================================== */
+
+.produto-info h3 {
+    min-height: 46px;
+
+    margin: 0 0 15px;
+
+    color: #222222;
+
+    font-size: 16px;
+    font-weight: 600;
+
+    line-height: 1.45;
+}
+
+
+/* ==========================================
+   PREÇO E BOTÃO DO CARRINHO
+========================================== */
+
+.produto-preco {
+    display: flex;
+
+    align-items: flex-end;
+    justify-content: space-between;
+
+    gap: 10px;
+}
+
+
+/* ==========================================
+   PREÇO PRINCIPAL
+========================================== */
+
+.produto-preco strong {
+    display: block;
+
+    color: #111111;
+
+    font-size: 19px;
+    font-weight: 800;
+}
+
+
+/* ==========================================
+   PARCELAMENTO
+========================================== */
+
+.produto-preco span {
+    display: block;
+
+    margin-top: 5px;
+
+    color: #666666;
+
+    font-size: 11px;
+    line-height: 1.4;
+}
+
+
+/* ==========================================
+   BOTÃO DO CARRINHO
+========================================== */
+
+.produto-carrinho {
+    flex-shrink: 0;
+
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: none;
+    border-radius: 8px;
+
+    background-color: var(--vermelho);
+    color: #ffffff;
+
+    font-size: 18px;
+
+    cursor: pointer;
+
+    transition: background-color 0.3s ease,
+                transform 0.3s ease;
+}
+
+
+.produto-carrinho:hover {
+    background-color: var(--vermelho-escuro);
+    transform: scale(1.05);
+}
+
+/* ==========================================
+   IMAGEM DOS PRODUTOS - OVERTIME
+========================================== */
+
+.produto-imagem {
+    position: relative;
+
+    width: 100%;
+    aspect-ratio: 1 / 1;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+
+    background-color: #f4f4f4;
+    box-sizing: border-box;
+}
+
+
+/* ==========================================
+   IMAGEM DENTRO DO CARD
+========================================== */
+
+.produto-imagem img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+
+    padding: 12px;
+    box-sizing: border-box;
+
+    transition: transform 0.4s ease;
+}
+
+
+/* ==========================================
+   EFEITO AO PASSAR O MOUSE
+========================================== */
+
+.produto-card:hover .produto-imagem img {
+    transform: scale(1.04);
+}
+
+
+/* =========================================================
+   ETIQUETA
+========================================================= */
+
+.produto-tag {
+    position: absolute;
+
+    z-index: 5;
+
+    top: 14px;
+    left: 14px;
+
+    padding: 7px 10px;
+
+    background-color: #111111;
+
+    color: white;
+
+    font-size: 5px;
+    font-weight: 800;
+
+    letter-spacing: 1px;
+}
+
+
+.produto-tag.destaque {
+    background-color: var(--vermelho);
+}
+
+
+.produto-tag.exclusivo {
+    background-color: #111111;
+
+    border-left: 3px solid var(--vermelho);
+}
+
+
+/* =========================================================
+   FAVORITO
+========================================================= */
+
+.produto-favorito {
+    position: absolute;
+
+    z-index: 5;
+
+    top: 12px;
+    right: 12px;
+
+    width: 38px;
+    height: 38px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background-color: white;
+
+    color: #222222;
+
+    font-size: 18px;
+
+    cursor: pointer;
+
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+
+    transition: 0.25s;
+}
+
+
+.produto-favorito:hover {
+    background-color: var(--vermelho);
+    box-shadow:0 3px 10px rgba(71, 12, 12, 0.925); ;
+    color: white;
+
+    transform: scale(1.07);
+}
+
+
+
+
+/* =========================================================
+   BOTÃO CARRINHO
+========================================================= */
+
+.produto-carrinho {
+    width: 43px;
+    height: 43px;
+
+    min-width: 43px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background-color: #111111;
+
+    color: white;
+
+    font-size: 19px;
+
+    cursor: pointer;
+
+    transition: 0.25s;
+}
+
+
+.produto-carrinho:hover {
+    background-color: var(--vermelho);
+
+    transform: translateY(-3px);
+}
+
+
+/* =========================================================
+   UNIVERSO OVERTIME
+========================================================= */
+
+.universo-overtime {
+    width: 100%;
+    background-color: #111111;
+}
+
+
+/* GRID PRINCIPAL */
+
+.universo-grid {
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    grid-auto-rows: 310px;
+}
+
+
+/* CARD */
+
+.universo-card {
+    position: relative;
+
+    overflow: hidden;
+
+    color: inherit;
+}
+
+
+/* =========================================================
+   BLOCOS COM TEXTO
+========================================================= */
+
+.universo-texto {
+    position: relative;
+
+    display: flex;
+
+    align-items: center;
+
+    padding: 45px;
+
+    transition: 0.3s;
+}
+
+
+.universo-texto:hover {
+    color: inherit;
+}
+
+
+.universo-vermelho {
+    background-color: var(--vermelho);
+    color: white;
+}
+
+
+.universo-preto {
+    background-color: #141414;
+    color: white;
+}
+
+
+.universo-branco {
+    background-color: #ffffff;
+    color: #111111;
+
+    border-bottom: 1px solid #eeeeee;
+}
+
+
+.universo-cinza {
+    background-color: #eeeeee;
+    color: #111111;
+}
+
+
+/* NÚMERO */
+
+.universo-numero {
+    position: absolute;
+
+    top: 25px;
+    right: 30px;
+
+    font-family: "Oswald", sans-serif;
+
+    font-size: 14px;
+    font-weight: 700;
+
+    opacity: 0.45;
+}
+
+
+/* CONTEÚDO */
+
+.universo-conteudo {
+    max-width: 270px;
+}
+
+
+.universo-mini {
+    display: block;
+
+    margin-bottom: 9px;
+
+    font-size: 9px;
+    font-weight: 800;
+
+    letter-spacing: 2.5px;
+
+    opacity: 0.75;
+}
+
+
+.universo-conteudo h2 {
+    margin: 0 0 10px;
+
+    font-family: "Oswald", sans-serif;
+
+    font-size: 48px;
+    font-weight: 700;
+
+    line-height: 1;
+}
+
+
+.universo-conteudo p {
+    max-width: 220px;
+
+    margin: 0 0 28px;
+
+    font-size: 12px;
+
+    line-height: 1.55;
+
+    opacity: 0.8;
+}
+
+
+/* LINK */
+
+.universo-link {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    padding-bottom: 5px;
+
+    border-bottom: 2px solid currentColor;
+
+    font-size: 10px;
+    font-weight: 800;
+
+    letter-spacing: 1px;
+}
+
+
+.universo-link i {
+    transition: 0.25s;
+}
+
+
+.universo-texto:hover .universo-link i {
+    transform: translateX(6px);
+}
+
+
+/* =========================================================
+   CARDS COM IMAGEM
+========================================================= */
+
+.universo-imagem {
+    position: relative;
+}
+
+
+.universo-imagem img {
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    transition: 0.55s;
+}
+
+
+.universo-imagem:hover img {
+    transform: scale(1.06);
+}
+
+
+/* SOMBRA */
+
+.universo-sombra {
+    position: absolute;
+
+    inset: 0;
+
+    background: linear-gradient(
+        0deg,
+        rgba(0, 0, 0, 0.72),
+        rgba(0, 0, 0, 0.03) 65%
+    );
+}
+
+
+/* LEGENDA */
+
+.universo-legenda {
+    position: absolute;
+
+    z-index: 2;
+
+    left: 30px;
+    bottom: 28px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    color: white;
+
+    font-family: "Oswald", sans-serif;
+}
+
+
+.universo-legenda span {
+    font-size: 11px;
+
+    letter-spacing: 3px;
+}
+
+
+.universo-legenda strong {
+    font-size: 27px;
+
+    line-height: 1.1;
+}
+
+
+/* =========================================================
+   TAMANHOS DIFERENTES
+========================================================= */
+
+/* NFL IMAGEM GRANDE */
+
+.universo-nfl {
+    grid-column: span 2;
+}
+
+
+/* NBA IMAGEM */
+
+.universo-nba {
+    grid-column: span 2;
+}
+
+
+/* MLB IMAGEM GRANDE */
+
+.universo-mlb {
+    grid-column: span 2;
+}
+
+
+/* NHL IMAGEM */
+
+.universo-nhl {
+    grid-column: span 2;
+}
+
+
+/* =========================================================
+   COLECIONÁVEIS
+========================================================= */
+
+.universo-colecionaveis {
+    grid-column: span 4;
+
+    min-height: 390px;
+
+    background-image:
+        url("https://images.unsplash.com/photo-1517466787929-bc90951d0974?auto=format&fit=crop&w=1800&q=90");
+
+    background-size: cover;
+
+    background-position: center;
+}
+
+
+.colecionaveis-overlay {
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(0,0,0,0.92) 0%,
+            rgba(0,0,0,0.70) 40%,
+            rgba(0,0,0,0.15) 100%
+        );
+}
+
+
+.colecionaveis-conteudo {
+    position: relative;
+
+    z-index: 3;
+
+    height: 100%;
+
+    max-width: 650px;
+
+    padding: 70px 6%;
+
+    color: white;
+}
+
+
+.colecionaveis-conteudo > span {
+    display: block;
+
+    margin-bottom: 12px;
+
+    color: var(--vermelho);
+
+    font-size: 10px;
+    font-weight: 800;
+
+    letter-spacing: 4px;
+}
+
+
+.colecionaveis-conteudo h2 {
+    margin: 0;
+
+    font-family: "Oswald", sans-serif;
+
+    font-size: 46px;
+    font-weight: 700;
+
+    line-height: 1;
+}
+
+
+.colecionaveis-conteudo h3 {
+    margin: 4px 0 18px;
+
+    font-family: "Oswald", sans-serif;
+
+    color: var(--vermelho);
+
+    font-size: 37px;
+    font-style: italic;
+    font-weight: 700;
+}
+
+
+.colecionaveis-conteudo p {
+    max-width: 500px;
+
+    margin-bottom: 28px;
+
+    color: #d6d6d6;
+
+    font-size: 13px;
+
+    line-height: 1.6;
+}
+
+
+.botao-colecionaveis {
+    width: fit-content;
+
+    min-height: 48px;
+
+    padding: 0 22px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    background-color: var(--vermelho);
+
+    color: white;
+
+    font-size: 10px;
+    font-weight: 800;
+
+    letter-spacing: 1px;
+
+    transition: 0.25s;
+}
+
+
+.universo-colecionaveis:hover .botao-colecionaveis {
+    background-color: white;
+
+    color: #111111;
+}
+
+
+
+
+/* =========================================
+   HOME - SEM PRODUTOS EM DESTAQUE
+========================================= */
+
+.sem-destaques-home {
+
+    grid-column: 1 / -1;
+
+    min-height: 250px;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 40px;
+
+    background-color: white;
+
+    border: 1px solid #e5e5e5;
+
+}
+
+
+.sem-destaques-home i {
+
+    margin-bottom: 10px;
+
+    color: var(--vermelho);
+
+    font-size: 38px;
+
+}
+
+
+.sem-destaques-home h3 {
+
+    margin: 0 0 5px;
+
+    font-family: "Oswald", sans-serif;
+
+    font-size: 23px;
+
+}
+
+
+.sem-destaques-home p {
+
+    margin: 0;
+
+    color: #777777;
+
+    font-size: 12px;
+
+}
+
+
+
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1000px) {
+
+    .universo-grid {
+        grid-template-columns: repeat(2, 1fr);
+
+        grid-auto-rows: 290px;
+    }
+
+
+    .universo-nfl,
+    .universo-nba,
+    .universo-mlb,
+    .universo-nhl {
+        grid-column: span 1;
+    }
+
+
+    .universo-colecionaveis {
+        grid-column: span 2;
+    }
+
+}
+
+
+/* =========================================================
+   CELULAR
+========================================================= */
+
+@media (max-width: 650px) {
+
+    .universo-grid {
+        grid-template-columns: 1fr;
+
+        grid-auto-rows: 260px;
+    }
+
+
+    .universo-card {
+        grid-column: span 1;
+    }
+
+
+    .universo-texto {
+        padding: 35px 28px;
+    }
+
+
+    .universo-conteudo h2 {
+        font-size: 40px;
+    }
+
+
+    .universo-colecionaveis {
+        grid-column: span 1;
+
+        min-height: 450px;
+    }
+
+
+    .colecionaveis-conteudo {
+        padding: 55px 28px;
+
+        display: flex;
+
+        flex-direction: column;
+
+        justify-content: flex-end;
+    }
+
+
+    .colecionaveis-conteudo h2 {
+        font-size: 37px;
+    }
+
+
+    .colecionaveis-conteudo h3 {
+        font-size: 29px;
+    }
+
+}

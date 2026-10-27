@@ -1,0 +1,833 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="OVERTIME - Loja de artigos esportivos das maiores ligas americanas. NFL, NBA, MLB, NHL e muito mais.">
+    <title>OVERTIME | Sua paixão vai além do jogo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+       <div class="topbar">
+            <div class="tracker">
+                <span>Frete Grátis para todo o Brasil 🚚</span>
+                <span>Produtos oficiais de alta qualidade 💯</span>
+                <span> 🏈 🏒 ⚾ 🏀 Paixão pelo esporte em cada detalhe  🏈 🏒 ⚾ 🏀 </span>
+                <span>10% off na primeira compra 🛍️</span>
+                <!-- --------------------------------------------- -->
+                <span>Frete Grátis para todo o Brasil 🚚  </span>
+                <span>Produtos oficiais de alta qualidade 💯 </span>
+                <span> 🏈 🏒 ⚾ 🏀 Paixão pelo esporte em cada detalhe 🏈 🏒 ⚾ 🏀 </span>
+                <span>10% off na primeira compra 🛍️</span>
+                <!-- --------------------------------------------- -->
+                <span>Frete Grátis para todo o Brasil 🚚  </span>
+                <span>Produtos oficiais de alta qualidade 💯 </span>
+                <span> 🏈 🏒 ⚾ 🏀 Paixão pelo esporte em cada detalhe 🏈 🏒 ⚾ 🏀 </span>
+                <span>10% off na primeira compra 🛍️</span>
+            </div>
+        </div>
+
+    <header class="cabecalho">
+        <div class="container">
+            <div class="conteudo-cabecalho">
+                <button class="botao-menu" type="button" data-bs-toggle="offcanvas" data-bs-target="#menuLateral" aria-controls="menuLateral" aria-label="Abrir menu">
+                    <i class="bi bi-list"></i>
+                </button>
+                <a href="index.html" class="logo">
+                    <img src="assets/logo.png" alt="OVERTIME">
+                </a>
+                <nav class="menu" id="navMenu">
+                    <a href="index.html" class="link-menu active">Início</a>
+                    <a href="#ligas" class="link-menu">Ligas</a>
+                    <a href="produtos.html" class="link-menu">Produtos</a>
+                    <a href="#colecionaveis" class="link-menu">Colecionáveis</a>
+                    <a href="#ofertas" class="link-menu menu-oferta">Ofertas</a>
+                </nav>
+                <div class="busca">
+                    <i class="bi bi-search"></i>
+                    <input type="text" id="searchInput" placeholder="O que você está procurando?">
+                </div>
+                <div class="acoes-cabecalho">
+                    <a href="login.html" class="acao-cabecalho" aria-label="Minha conta">
+                        <i class="bi bi-person"></i>
+                    </a>
+                    <button class="acao-cabecalho favoritos" type="button" aria-label="Favoritos">
+                        <i class="bi bi-heart"></i>
+                    </button>
+                    <a href="carrinho.html" class="acao-cabecalho carrinho" aria-label="Carrinho">
+                        <i class="bi bi-cart3"></i>
+                        <span class="qtd-carrinho" id="cartCount">0</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="offcanvas offcanvas-start menu-lateral" tabindex="-1" id="menuLateral">
+        <div class="offcanvas-header">
+            <a href="index.html" class="logo-lateral">
+                <img src="assets/logo.png" alt="OVERTIME">
+            </a>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Fechar"></button>
+        </div>
+        
+        <div class="offcanvas-body">
+            <nav class="links-lateral">
+                <a href="index.html">
+                    <i class="bi bi-house"></i>
+                    Início
+                </a>
+                <a href="#ligas">
+                    <i class="bi bi-trophy"></i>
+                    Ligas
+                </a>
+                <a href="produtos.html">
+                    <i class="bi bi-bag"></i>
+                    Produtos
+                </a>
+                <a href="#colecionaveis">
+                    <i class="bi bi-stars"></i>
+                    Colecionáveis
+                </a>
+                <a href="#ofertas" class="oferta-lateral">
+                    <i class="bi bi-tag"></i>
+                    Ofertas
+                </a>
+            </nav>
+            <div class="divisao-lateral"></div>
+            <div class="extras-lateral">
+                <a href="login.html">
+                    <i class="bi bi-person"></i>
+                    Minha conta
+                </a>
+                <a href="carrinho.html">
+                    <i class="bi bi-cart3"></i>
+                    Meu carrinho
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <main>
+     <section class="destaque">
+    <div id="overtimeCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="6000">
+
+        <div class="carousel-indicators indicadores">
+            <button type="button" data-bs-target="#overtimeCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#overtimeCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#overtimeCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            <button type="button" data-bs-target="#overtimeCarousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
+            <button type="button" data-bs-target="#overtimeCarousel" data-bs-slide-to="4" aria-label="Slide 5"></button>
+        </div>
+
+        <div class="carousel-inner">
+
+            <div class="carousel-item active">
+                <div class="conteudo-destaque">
+                    <img src="https://images.pexels.com/photos/7005503/pexels-photo-7005503.jpeg?_gl=1*1ibouq2*_ga*NDU4Njg5MTcwLjE3OTA2MjUwNTA.*_ga_8JE65Q40S6*czE3OTI0NDEzMTMkbzIkZzEkdDE3OTI0NDI1MjckajQ0JGwwJGgw" class="imagem-destaque" alt="Baseball">
+
+                    <div class="sombra-destaque"></div>
+
+                    <div class="container area-destaque">
+                        <div class="texto-destaque">
+                            <span class="subtitulo-destaque">MAIS QUE UM ESPORTE.</span>
+
+                            <h1>
+                                VISTA A SUA
+                                <strong>PAIXÃO</strong>
+                            </h1>
+
+                            <p>
+                                Jerseys, bonés, acessórios e produtos para quem vive o esporte dentro e fora do jogo.
+                            </p>
+
+                            <div class="botoes-destaque">
+                                <a href="produtos.html" class="botao-destaque botao-vermelho">
+                                    VER PRODUTOS
+                                    <i class="bi bi-arrow-right"></i>
+                                </a>
+
+                                <a href="#ligas" class="botao-destaque botao-branco">
+                                    EXPLORAR LIGAS
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="texto-lado">
+                        BASEBALL<br>
+                        LIFESTYLE<br>
+                        ALWAYS ON
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="carousel-item">
+                <div class="conteudo-destaque">
+                    <img src="assets/imagens/nhl.png" class="imagem-destaque imagem-nhl" alt="Hóquei no gelo">
+
+                    <div class="sombra-destaque sombra-escura"></div>
+
+                    <div class="container area-destaque">
+                        <div class="texto-destaque">
+                            <span class="subtitulo-destaque">NHL COLLECTION</span>
+
+                            <h2 class="titulo-destaque">
+                                SINTA CADA
+                                <strong>SEGUNDO.</strong>
+                            </h2>
+
+                            <p>
+                                Produtos para quem sabe que no gelo cada segundo pode mudar o jogo.
+                            </p>
+
+                            <div class="botoes-destaque">
+                                <a href="#" class="botao-destaque botao-vermelho">
+                                    VER NHL
+                                    <i class="bi bi-arrow-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="texto-lado">
+                        HOCKEY<br>
+                        NEVER<br>
+                        STOPS
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="carousel-item">
+                <div class="conteudo-destaque">
+                    <img src="https://cdn.nba.com/manage/2021/08/GettyImages-954331802.jpg" class="imagem-destaque" alt="Basquete">
+
+                    <div class="sombra-destaque"></div>
+
+                    <div class="container area-destaque">
+                        <div class="texto-destaque">
+                            <span class="subtitulo-destaque">NBA COLLECTION</span>
+
+                            <h2 class="titulo-destaque">
+                                O JOGO
+                                <strong>NÃO PARA.</strong>
+                            </h2>
+
+                            <p>
+                                Do primeiro quarto ao overtime, carregue as cores do seu time.
+                            </p>
+
+                            <div class="botoes-destaque">
+                                <a href="#" class="botao-destaque botao-vermelho">
+                                    VER NBA
+                                    <i class="bi bi-arrow-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="texto-lado">
+                        PLAY<br>
+                        BEYOND<br>
+                        THE CLOCK
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="carousel-item">
+                <div class="conteudo-destaque">
+                    <img src="assets/imagens/nfl.jpg" class="imagem-destaque" alt="Futebol americano">
+
+                    <div class="sombra-destaque"></div>
+
+                    <div class="container area-destaque">
+                        <div class="texto-destaque">
+                            <span class="subtitulo-destaque">NFL COLLECTION</span>
+
+                            <h2 class="titulo-destaque">
+                                VIVA CADA
+                                <strong>JOGADA.</strong>
+                            </h2>
+
+                            <p>
+                                Jerseys, acessórios e produtos inspirados na intensidade do futebol americano.
+                            </p>
+
+                            <div class="botoes-destaque">
+                                <a href="#" class="botao-destaque botao-vermelho">
+                                    VER NFL
+                                    <i class="bi bi-arrow-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="texto-lado">
+                        EVERY<br>
+                        YARD<br>
+                        MATTERS
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="carousel-item">
+                <div class="conteudo-destaque">
+                    <img src="https://images.unsplash.com/photo-1508344928928-7165b67de128?auto=format&fit=crop&w=1920&q=90" class="imagem-destaque imagem-mlb" alt="baseball">
+
+                    <div class="sombra-destaque sombra-escura"></div>
+
+                    <div class="container area-destaque">
+                        <div class="texto-destaque">
+                            <span class="subtitulo-destaque">MLB COLLECTION</span>
+
+                            <h2 class="titulo-destaque">
+                                SINTA CADA
+                                <strong>SEGUNDO.</strong>
+                            </h2>
+
+                            <p>
+                                Produtos para quem sabe que no gelo cada segundo pode mudar o jogo.
+                            </p>
+
+                            <div class="botoes-destaque">
+                                <a href="#" class="botao-destaque botao-vermelho">
+                                    VER MLB
+                                    <i class="bi bi-arrow-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="texto-lado">
+                        BASEBALL<br>
+                        NEVER<br>
+                        STOPS
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <button class="carousel-control-prev controle-slide" type="button" data-bs-target="#overtimeCarousel" data-bs-slide="prev">
+            <span class="seta-slide">
+                <i class="bi bi-arrow-left"></i>
+            </span>
+            <span class="visually-hidden">Anterior</span>
+        </button>
+
+        <button class="carousel-control-next controle-slide" type="button" data-bs-target="#overtimeCarousel" data-bs-slide="next">
+            <span class="seta-slide">
+                <i class="bi bi-arrow-right"></i>
+            </span>
+            <span class="visually-hidden">Próximo</span>
+        </button>
+
+    </div>
+</section>
+
+        <section class="ligas" id="ligas">
+            <div class="container">
+                <div class="titulo-secao">
+                    <div>
+                        <span class="chamada-secao">ESCOLHA SEU CAMPO</span>
+                        <h2>COMPRE POR LIGA</h2>
+                    </div>
+                    <a href="produtos.html" class="ver-todas">
+                        VER TODAS
+                        <i class="bi bi-arrow-right"></i>
+                    </a>
+                </div>
+
+                <div class="grade-ligas">
+                    <a href="dashboard.html" class="card-liga">
+                        <div class="logo-liga">
+                            <img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/NFL_wordmark_logo_2008.svg" alt="NFL">
+                        </div>
+                        <h3>NFL</h3>
+                        <p>Futebol Americano</p>
+                    </a>
+
+                    <a href="#" class="card-liga">
+                        <div class="logo-liga">
+                            <img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/National_Basketball_Association_logo_2017-present.svg" alt="NBA">
+                        </div>
+                        <h3>NBA</h3>
+                        <p>Basquete</p>
+                    </a>
+
+                    <a href="#" class="card-liga">
+                        <div class="logo-liga">
+                            <img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Major_League_Baseball_logo.svg" alt="MLB">
+                        </div>
+                        <h3>MLB</h3>
+                        <p>Baseball</p>
+                    </a>
+
+                    <a href="#" class="card-liga">
+                        <div class="logo-liga">
+                            <img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/National_Hockey_League_shield.svg" alt="NHL">
+                        </div>
+                        <h3>NHL</h3>
+                        <p>Hockey</p>
+                    </a>
+
+                    <a href="#colecionaveis" class="card-liga">
+                        <div class="logo-liga logo-especial">
+                            <i class="bi bi-trophy-fill"></i>
+                        </div>
+                        <h3>EXCLUSIVOS</h3>
+                        <p>Colecionáveis</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+        
+
+        <section class="categorias">
+    <div class="container">
+
+        <div class="topo-categorias">
+            <div class="titulo-categorias">
+                <h2>EXPLORE NOSSAS CATEGORIAS</h2>
+                <span></span>
+            </div>
+
+            <a href="produtos.html">
+                VER TODAS
+                <i class="bi bi-arrow-right"></i>
+            </a>
+        </div>
+
+        <div class="lista-categorias">
+
+            <a href="#" class="card-categoria">
+                <img src="https://images.pexels.com/photos/35420842/pexels-photo-35420842.jpeg?_gl=1*bj7999*_ga*NDU4Njg5MTcwLjE3OTA2MjUwNTA.*_ga_8JE65Q40S6*czE3OTI0NDEzMTMkbzIkZzEkdDE3OTI0NDIxMjgkajU5JGwwJGgw" alt="Camisetas">
+                <div class="sombra-card"></div>
+
+                <div class="texto-card">
+                    <h3>CAMISETAS</h3>
+                    <p>ESTILO DENTRO<br>E FORA DO CAMPO</p>
+
+                    <span>
+                        <i class="bi bi-arrow-right"></i>
+                    </span>
+                </div>
+            </a>
+
+            <a href="#" class="card-categoria">
+                <img src="https://images.pexels.com/photos/25561929/pexels-photo-25561929.jpeg?_gl=1*1lwca6t*_ga*NDU4Njg5MTcwLjE3OTA2MjUwNTA.*_ga_8JE65Q40S6*czE3OTI0NDEzMTMkbzIkZzEkdDE3OTI0NDE5OTgkajMyJGwwJGgw" alt="Bonés">
+                <div class="sombra-card"></div>
+
+                <div class="texto-card">
+                    <h3>BONÉS</h3>
+                    <p>TRADIÇÃO EM<br>CADA DETALHE</p>
+
+                    <span>
+                        <i class="bi bi-arrow-right"></i>
+                    </span>
+                </div>
+            </a>
+
+            <a href="#" class="card-categoria">
+                <img src="https://images.pexels.com/photos/31696395/pexels-photo-31696395.jpeg?_gl=1*18hpah8*_ga*NDU4Njg5MTcwLjE3OTA2MjUwNTA.*_ga_8JE65Q40S6*czE3OTI0NDEzMTMkbzIkZzEkdDE3OTI0NDE3NzckajU5JGwwJGgw" alt="Moletons">
+                <div class="sombra-card"></div>
+
+                <div class="texto-card">
+                    <h3>MOLETONS</h3>
+                    <p>CONFORTO<br>O ANO TODO</p>
+
+                    <span>
+                        <i class="bi bi-arrow-right"></i>
+                    </span>
+                </div>
+            </a>
+
+            <a href="#" class="card-categoria">
+                <img src="https://images.pexels.com/photos/13140964/pexels-photo-13140964.jpeg?_gl=1*2qgt22*_ga*NDU4Njg5MTcwLjE3OTA2MjUwNTA.*_ga_8JE65Q40S6*czE3OTI0NDEzMTMkbzIkZzEkdDE3OTI0NDE3MTUkajU5JGwwJGgw" alt="Acessórios">
+                <div class="sombra-card"></div>
+
+                <div class="texto-card">
+                    <h3>ACESSÓRIOS</h3>
+                    <p>PARA VERDADEIROS<br>FÃS</p>
+
+                    <span>
+                        <i class="bi bi-arrow-right"></i>
+                    </span>
+                </div>
+            </a>
+
+        </div>
+
+    </div>
+</section>
+
+<!-- ==================================================
+     PRODUTOS EM DESTAQUE
+=================================================== -->
+
+<section class="produtos-destaque" id="destaques">
+
+    <div class="container">
+
+        <!-- TÍTULO DA SEÇÃO -->
+
+        <div class="topo-produtos">
+
+            <div class="titulo-produtos">
+
+                <div>
+
+                    <span class="chamada-produtos">
+                        SELEÇÃO OVERTIME
+                    </span>
+
+                    <h2>
+                        PRODUTOS EM DESTAQUE
+                    </h2>
+
+                </div>
+
+                <span class="linha-vermelha"></span>
+
+            </div>
+
+
+            <a href="produtos.html" class="ver-produtos">
+
+                VER TODOS
+
+                <i class="bi bi-arrow-right"></i>
+
+            </a>
+
+        </div>
+
+
+        <!-- PRODUTOS GERADOS PELO JAVASCRIPT -->
+
+        <div
+            class="grade-produtos"
+            id="gradeProdutos"
+        >
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ==================================================
+     UNIVERSO OVERTIME
+=================================================== -->
+
+<section class="universo-overtime">
+
+    <div class="universo-grid">
+
+        <!-- AQUI CONTINUA O SEU UNIVERSO OVERTIME -->
+
+
+        <!-- NFL - BLOCO VERMELHO -->
+
+        <a href="#" class="universo-card universo-texto universo-vermelho">
+
+            <span class="universo-numero">
+                01
+            </span>
+
+            <div class="universo-conteudo">
+
+                <span class="universo-mini">
+                    AMERICAN FOOTBALL
+                </span>
+
+                <h2>
+                    NFL
+                </h2>
+
+                <p>
+                    Força, tradição e paixão em cada jogada.
+                </p>
+
+                <span class="universo-link">
+                    EXPLORAR NFL
+                    <i class="bi bi-arrow-right"></i>
+                </span>
+
+            </div>
+
+        </a>
+
+
+
+        <!-- NFL IMAGEM -->
+
+        <a href="#" class="universo-card universo-imagem universo-nfl">
+
+            <img
+                src="assets/imagens/nfl.jpg"
+                alt="NFL"
+            >
+
+            <div class="universo-sombra"></div>
+
+            <div class="universo-legenda">
+
+                <span>
+                    EVERY YARD
+                </span>
+
+                <strong>
+                    MATTERS.
+                </strong>
+
+            </div>
+
+        </a>
+
+
+
+        <!-- NBA IMAGEM -->
+
+        <a href="#" class="universo-card universo-imagem universo-nba">
+
+            <img
+                src="assets/imagens/michaeljordan.webp"
+                alt="NBA"
+            >
+
+            <div class="universo-sombra"></div>
+
+            <div class="universo-legenda">
+
+                <span>
+                    BEYOND
+                </span>
+
+                <strong>
+                    THE COURT.
+                </strong>
+
+            </div>
+
+        </a>
+
+
+
+        <!-- NBA - BLOCO PRETO -->
+
+        <a href="#" class="universo-card universo-texto universo-preto">
+
+            <span class="universo-numero">
+                02
+            </span>
+
+            <div class="universo-conteudo">
+
+                <span class="universo-mini">
+                    BASKETBALL CULTURE
+                </span>
+
+                <h2>
+                    NBA
+                </h2>
+
+                <p>
+                    Do primeiro quarto ao último segundo.
+                </p>
+
+                <span class="universo-link">
+                    EXPLORAR NBA
+                    <i class="bi bi-arrow-right"></i>
+                </span>
+
+            </div>
+
+        </a>
+
+
+
+        <!-- MLB - BLOCO BRANCO -->
+
+        <a href="#" class="universo-card universo-texto universo-branco">
+
+            <span class="universo-numero">
+                03
+            </span>
+
+            <div class="universo-conteudo">
+
+                <span class="universo-mini">
+                    BASEBALL LIFESTYLE
+                </span>
+
+                <h2>
+                    MLB
+                </h2>
+
+                <p>
+                    Clássicos que atravessam gerações.
+                </p>
+
+                <span class="universo-link">
+                    EXPLORAR MLB
+                    <i class="bi bi-arrow-right"></i>
+                </span>
+
+            </div>
+
+        </a>
+
+
+
+        <!-- MLB IMAGEM -->
+
+        <a href="#" class="universo-card universo-imagem universo-mlb">
+
+            <img
+                src="assets/imagens/mlb.jpg"
+                alt="MLB"
+            >
+
+            <div class="universo-sombra"></div>
+
+            <div class="universo-legenda">
+
+                <span>
+                    BASEBALL
+                </span>
+
+                <strong>
+                    NEVER STOPS.
+                </strong>
+
+            </div>
+
+        </a>
+
+
+
+        <!-- NHL IMAGEM -->
+
+        <a href="#" class="universo-card universo-imagem universo-nhl">
+
+            <img
+                src="assets/imagens/nhl.png"
+                alt="NHL"
+            >
+
+            <div class="universo-sombra"></div>
+
+            <div class="universo-legenda">
+
+                <span>
+                    ICE COLD
+                </span>
+
+                <strong>
+                    PASSION.
+                </strong>
+
+            </div>
+
+        </a>
+
+
+
+        <!-- NHL - BLOCO CINZA -->
+
+        <a href="#" class="universo-card universo-texto universo-cinza">
+
+            <span class="universo-numero">
+                04
+            </span>
+
+            <div class="universo-conteudo">
+
+                <span class="universo-mini">
+                    HOCKEY COLLECTION
+                </span>
+
+                <h2>
+                    NHL
+                </h2>
+
+                <p>
+                    Velocidade e intensidade dentro e fora do gelo.
+                </p>
+
+                <span class="universo-link">
+                    EXPLORAR NHL
+                    <i class="bi bi-arrow-right"></i>
+                </span>
+
+            </div>
+
+        </a>
+
+
+
+        <!-- COLECIONÁVEIS -->
+
+        <a href="#" class="universo-card universo-colecionaveis">
+
+            <div class="colecionaveis-overlay"></div>
+
+            <div class="colecionaveis-conteudo">
+
+                <span>
+                    OVERTIME EXCLUSIVES
+                </span>
+
+                <h2>
+                    MAIS QUE UM PRODUTO.
+                </h2>
+
+                <h3>
+                    UM PEDAÇO DA HISTÓRIA.
+                </h3>
+
+                <p>
+                    Jerseys especiais, itens autografados
+                    e colecionáveis para verdadeiros fãs.
+                </p>
+
+                <div class="botao-colecionaveis">
+
+                    VER COLEÇÃO
+
+                    <i class="bi bi-arrow-right"></i>
+
+                </div>
+
+            </div>
+
+        </a>
+
+
+    </div>
+
+</section>
+
+</section>
+
+    </main>
+   <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+></script>
+
+<script src="home-produtos.js"></script>
+
+<script src="script.js"></script>
+</body>
+</html>

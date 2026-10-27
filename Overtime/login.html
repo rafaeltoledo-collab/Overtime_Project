@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Login | OVERTIME</title>
+
+    <link
+        rel="stylesheet"
+        href="assets/css/style2.css"
+    >
+</head>
+
+
+<body>
+
+    <!-- CÍRCULOS DECORATIVOS -->
+
+    <div class="circulo circulo-1"></div>
+    <div class="circulo circulo-2"></div>
+
+
+    <!-- CONTAINER PRINCIPAL -->
+
+    <main class="login-container">
+
+        <div class="login-card">
+
+
+            <!-- LOGO -->
+
+            <div class="logo">
+
+                <div class="logo-icon"></div>
+
+            </div>
+
+
+            <!-- TÍTULO -->
+
+            <div class="title">
+
+                <span class="login-icon">
+
+                    <img
+                        src="assets/imagens/OVERTIMERRR.png"
+                        alt="Logo OVERTIME"
+                    >
+
+                </span>
+
+
+                <h1>
+                    Login
+                </h1>
+
+
+                <p>
+                    Acesse a sua conta
+                </p>
+
+            </div>
+
+
+
+            <!-- FORMULÁRIO -->
+
+            <form id="loginForm">
+
+
+                <!-- EMAIL -->
+
+                <div class="input-grupo">
+
+                    <label for="email">
+                        E-mail
+                    </label>
+
+
+                    <div class="input-box">
+
+                        <span class="envelope">
+                            ✉
+                        </span>
+
+
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            placeholder="Digite seu e-mail"
+                            autocomplete="email"
+                            required
+                        >
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- SENHA -->
+
+                <div class="input-grupo">
+
+                    <label for="senha">
+                        Senha
+                    </label>
+
+
+                    <div class="input-box">
+
+                        <span class="cadeado">
+                            🔒
+                        </span>
+
+
+                        <input
+                            type="password"
+                            id="senha"
+                            name="senha"
+                            placeholder="Digite sua senha"
+                            autocomplete="current-password"
+                            required
+                        >
+
+
+                        <button
+                            type="button"
+                            id="togglePassword"
+                            class="toggle-password"
+                            aria-label="Mostrar ou ocultar senha"
+                            onclick="showPassword()"
+                        >
+                            👀
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- OPÇÕES -->
+
+                <div class="options">
+
+                    <label class="remember">
+
+                        <input
+                            type="checkbox"
+                            id="remember"
+                            name="remember"
+                        >
+
+                        <span>
+                            Lembrar-me
+                        </span>
+
+                    </label>
+
+
+                    <a href="login_parts/R_mail.html">
+                        Esqueci minha senha
+                    </a>
+
+                </div>
+
+
+
+                <!-- TERMOS -->
+
+                <div class="termos">
+
+                    <label for="termos">
+
+                        <input
+                            type="checkbox"
+                            name="termos"
+                            id="termos"
+                            required
+                        >
+
+
+                        <span>
+
+                            Li e aceito os
+
+                            <a href="login_parts/termos.html">
+                                termos
+                            </a>
+
+                        </span>
+
+                    </label>
+
+                </div>
+
+
+
+                <!-- BOTÃO LOGIN -->
+
+                <button
+                    type="submit"
+                    id="btn-login"
+                    class="btn-login"
+                >
+                    Entrar
+                </button>
+
+
+
+                <!-- MENSAGENS -->
+
+                <div
+                    id="message"
+                    aria-live="polite"
+                ></div>
+
+            </form>
+
+
+
+            <!-- CRIAR CONTA -->
+
+            <div class="register">
+
+                <a
+                    href="login_parts/criar-conta.html"
+                    class="criarconta"
+                >
+                    Criar conta
+                </a>
+
+            </div>
+
+
+        </div>
+
+    </main>
+
+
+    <!-- JAVASCRIPT DO LOGIN -->
+
+    <script src="login.js"></script>
+
+</body>
+
+</html>

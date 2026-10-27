@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Produtos | OVERTIME</title>
+
+    <!-- Bootstrap Icons -->
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    >
+
+    <!-- Fontes -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Oswald:wght@400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- CSS principal -->
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+    <!-- CSS da página -->
+    <link
+        rel="stylesheet"
+        href="assets/css/produtos.css"
+    >
+
+</head>
+
+
+<body>
+
+
+    <!-- =====================================
+         TOPO
+    ====================================== -->
+
+    <div class="topbar">
+
+        <div class="tracker">
+
+            <span>
+                Frete Grátis para todo o Brasil 🚚
+            </span>
+
+            <span>
+                Produtos oficiais de alta qualidade 💯
+            </span>
+
+            <span>
+                🏈 🏒 ⚾ 🏀 Paixão pelo esporte
+            </span>
+
+            <span>
+                10% off na primeira compra 🛍️
+            </span>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =====================================
+         HEADER
+    ====================================== -->
+
+    <header class="cabecalho">
+
+        <div class="container">
+
+            <div class="conteudo-cabecalho">
+
+
+                <a
+                    href="index.html"
+                    class="logo"
+                >
+
+                    <img
+                        src="assets/logo.png"
+                        alt="OVERTIME"
+                    >
+
+                </a>
+
+
+
+                <nav class="menu">
+
+                    <a
+                        href="index.html"
+                        class="link-menu"
+                    >
+                        Início
+                    </a>
+
+
+                    <a
+                        href="index.html#ligas"
+                        class="link-menu"
+                    >
+                        Ligas
+                    </a>
+
+
+                    <a
+                        href="produtos.html"
+                        class="link-menu active"
+                    >
+                        Produtos
+                    </a>
+
+
+                    <a
+                        href="index.html#colecionaveis"
+                        class="link-menu"
+                    >
+                        Colecionáveis
+                    </a>
+
+                </nav>
+
+
+
+                <div class="acoes-cabecalho">
+
+                    <a
+                        href="login.html"
+                        class="acao-cabecalho"
+                    >
+                        <i class="bi bi-person"></i>
+                    </a>
+
+
+                    <button
+                        class="acao-cabecalho"
+                        id="btnFavoritosTopo"
+                    >
+                        <i class="bi bi-heart"></i>
+                    </button>
+
+
+                    <a
+                        href="carrinho.html"
+                        class="acao-cabecalho carrinho"
+                    >
+
+                        <i class="bi bi-cart3"></i>
+
+                        <span
+                            class="qtd-carrinho"
+                            id="cartCount"
+                        >
+                            0
+                        </span>
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =====================================
+         HERO PRODUTOS
+    ====================================== -->
+
+    <section class="catalogo-hero">
+
+        <div class="container">
+
+            <span>
+                OVERTIME STORE
+            </span>
+
+            <h1>
+                TODOS OS PRODUTOS
+            </h1>
+
+            <p>
+                Encontre produtos das maiores ligas
+                esportivas americanas.
+            </p>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================
+         CATÁLOGO
+    ====================================== -->
+
+    <main class="catalogo">
+
+        <div class="container">
+
+
+            <!-- FILTROS -->
+
+            <section class="catalogo-filtros">
+
+
+                <div class="campo-busca">
+
+                    <i class="bi bi-search"></i>
+
+                    <input
+                        type="text"
+                        id="buscaProdutos"
+                        placeholder="Buscar produto..."
+                    >
+
+                </div>
+
+
+
+                <select id="filtroLiga">
+
+                    <option value="">
+                        Todas as ligas
+                    </option>
+
+                    <option value="NFL">
+                        NFL
+                    </option>
+
+                    <option value="NBA">
+                        NBA
+                    </option>
+
+                    <option value="MLB">
+                        MLB
+                    </option>
+
+                    <option value="NHL">
+                        NHL
+                    </option>
+
+                    <option value="OVERTIME">
+                        OVERTIME
+                    </option>
+
+                </select>
+
+
+
+                <select id="filtroCategoria">
+
+                    <option value="">
+                        Todas as categorias
+                    </option>
+
+                    <option value="Jersey">
+                        Jerseys
+                    </option>
+
+                    <option value="Camiseta">
+                        Camisetas
+                    </option>
+
+                    <option value="Boné">
+                        Bonés
+                    </option>
+
+                    <option value="Moletom">
+                        Moletons
+                    </option>
+
+                    <option value="Bola">
+                        Bolas
+                    </option>
+
+                    <option value="Acessório">
+                        Acessórios
+                    </option>
+
+                    <option value="Colecionável">
+                        Colecionáveis
+                    </option>
+
+                </select>
+
+
+
+                <select id="ordenacao">
+
+                    <option value="recentes">
+                        Mais recentes
+                    </option>
+
+                    <option value="menor-preco">
+                        Menor preço
+                    </option>
+
+                    <option value="maior-preco">
+                        Maior preço
+                    </option>
+
+                    <option value="nome">
+                        Nome A-Z
+                    </option>
+
+                </select>
+
+
+            </section>
+
+
+
+            <!-- RESULTADO -->
+
+            <div class="catalogo-topo">
+
+                <div>
+
+                    <span class="catalogo-mini">
+                        OVERTIME
+                    </span>
+
+                    <h2>
+                        PRODUTOS
+                    </h2>
+
+                </div>
+
+
+                <p id="quantidadeProdutos">
+                    0 produtos
+                </p>
+
+            </div>
+
+
+
+            <!-- PRODUTOS -->
+
+            <section
+                class="grade-produtos catalogo-grade"
+                id="listaProdutosLoja"
+            >
+            </section>
+
+
+
+            <!-- NENHUM PRODUTO -->
+
+            <div
+                class="nenhum-produto"
+                id="nenhumProduto"
+            >
+
+                <i class="bi bi-search"></i>
+
+                <h3>
+                    Nenhum produto encontrado
+                </h3>
+
+                <p>
+                    Tente alterar os filtros.
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </main>
+
+
+
+    <!-- =====================================
+         FOOTER SIMPLES
+    ====================================== -->
+
+    <footer class="catalogo-footer">
+
+        <img
+            src="assets/logo.png"
+            alt="OVERTIME"
+        >
+
+        <p>
+            © 2026 OVERTIME
+        </p>
+
+    </footer>
+
+
+
+    <script src="produtos.js"></script>
+
+</body>
+
+</html>

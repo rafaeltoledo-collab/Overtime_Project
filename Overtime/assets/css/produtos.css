@@ -1,0 +1,309 @@
+/* ==========================================
+   CATÁLOGO OVERTIME
+========================================== */
+
+.catalogo-hero {
+    padding: 70px 0;
+
+    background-color: #111111;
+
+    color: white;
+}
+
+
+.catalogo-hero span {
+    color: var(--vermelho);
+
+    font-size: 10px;
+
+    font-weight: 800;
+
+    letter-spacing: 4px;
+}
+
+
+.catalogo-hero h1 {
+    margin: 8px 0;
+
+    font-family: "Oswald", sans-serif;
+
+    font-size: 50px;
+
+    font-weight: 700;
+}
+
+
+.catalogo-hero p {
+    max-width: 500px;
+
+    color: #cccccc;
+
+    font-size: 13px;
+}
+
+
+
+/* ==========================================
+   CATÁLOGO
+========================================== */
+
+.catalogo {
+    padding: 45px 0 80px;
+
+    background-color: #f6f6f6;
+}
+
+
+
+/* ==========================================
+   FILTROS
+========================================== */
+
+.catalogo-filtros {
+    display: grid;
+
+    grid-template-columns:
+        minmax(250px, 1fr)
+        180px
+        200px
+        180px;
+
+    gap: 12px;
+
+    margin-bottom: 40px;
+}
+
+
+.campo-busca {
+    height: 48px;
+
+    padding: 0 16px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    background-color: white;
+
+    border: 1px solid #dddddd;
+}
+
+
+.campo-busca input {
+    width: 100%;
+
+    border: none;
+
+    outline: none;
+
+    font-size: 12px;
+}
+
+
+.catalogo-filtros select {
+    padding: 0 14px;
+
+    border: 1px solid #dddddd;
+
+    background-color: white;
+
+    font-size: 11px;
+
+    outline: none;
+}
+
+
+
+/* ==========================================
+   TOPO DOS PRODUTOS
+========================================== */
+
+.catalogo-topo {
+    margin-bottom: 25px;
+
+    display: flex;
+
+    align-items: flex-end;
+
+    justify-content: space-between;
+}
+
+
+.catalogo-mini {
+    color: var(--vermelho);
+
+    font-size: 9px;
+
+    font-weight: 800;
+
+    letter-spacing: 3px;
+}
+
+
+.catalogo-topo h2 {
+    margin: 4px 0 0;
+
+    font-family: "Oswald", sans-serif;
+
+    font-size: 30px;
+}
+
+
+.catalogo-topo p {
+    margin: 0;
+
+    color: #777777;
+
+    font-size: 11px;
+}
+
+
+
+/* ==========================================
+   GRADE
+========================================== */
+
+.catalogo-grade {
+    grid-template-columns:
+        repeat(4, 1fr);
+}
+
+
+
+/* ==========================================
+   SEM RESULTADOS
+========================================== */
+
+.nenhum-produto {
+    min-height: 300px;
+
+    display: none;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+}
+
+
+.nenhum-produto i {
+    margin-bottom: 12px;
+
+    color: var(--vermelho);
+
+    font-size: 45px;
+}
+
+
+.nenhum-produto h3 {
+    font-family: "Oswald", sans-serif;
+}
+
+
+.nenhum-produto p {
+    color: #777777;
+
+    font-size: 12px;
+}
+
+
+
+/* ==========================================
+   FOOTER
+========================================== */
+
+.catalogo-footer {
+    min-height: 120px;
+
+    padding: 25px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 10px;
+
+    background-color: #111;
+
+    color: white;
+}
+
+
+.catalogo-footer img {
+    width: 150px;
+}
+
+
+.catalogo-footer p {
+    margin: 0;
+
+    color: #999;
+
+    font-size: 10px;
+}
+
+
+
+/* ==========================================
+   RESPONSIVO
+========================================== */
+
+@media (max-width: 1100px) {
+
+    .catalogo-grade {
+        grid-template-columns:
+            repeat(3, 1fr);
+    }
+
+
+    .catalogo-filtros {
+        grid-template-columns:
+            1fr 1fr;
+    }
+
+}
+
+
+@media (max-width: 750px) {
+
+    .catalogo-grade {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+
+    .catalogo-filtros {
+        grid-template-columns:
+            1fr;
+    }
+
+
+    .catalogo-filtros select {
+        height: 48px;
+    }
+
+
+    .catalogo-hero h1 {
+        font-size: 38px;
+    }
+
+}
+
+
+@media (max-width: 520px) {
+
+    .catalogo-grade {
+        grid-template-columns:
+            1fr;
+    }
+
+}
